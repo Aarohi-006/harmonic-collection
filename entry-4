@@ -1,0 +1,18 @@
+<header>
+  <h1>My Website</h1>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </nav>
+</header>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>I am a student at Parsons majoring in Communication Design with two minors as Fine Arts and Creative Entrepreneurship.</p>
+</section>
+
+<footer>
+  <a href="https://my-instagram-link">Instagram</a>
+  <a href="/contact">Contact Me</a>
+</footer>
