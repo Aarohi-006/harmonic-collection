@@ -12,7 +12,8 @@
   <p>I am a student at Parsons majoring in Communication Design with two minors as Fine Arts and Creative Entrepreneurship.</p>
 </section>
 
-<footer>
-  <a href="https://my-instagram-link">Instagram</a>
-  <a href="/contact">Contact Me</a>
-</footer>
+<div> 
+    <p>follow for more content</p>
+   </div>
+  </body>
+</html>
