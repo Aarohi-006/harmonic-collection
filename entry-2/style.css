@@ -1,5 +1,16 @@
-div {
-  background-color: deepskyblue;
-  border-top: solid black 4px;
-  padding: 10px;
+.container-1 {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  /* not related to flex */
+  background-color: springgreen;
+  height: 200px;
+  width: 200px;
+}
+
+.element {
+  background-color: magenta;
+  height: 100px;
+  width: 100px;
 }
