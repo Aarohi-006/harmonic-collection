@@ -1,0 +1,28 @@
+.container-1 {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  /* not related to flex */
+  background-color: skyblue;
+  height: 600px;
+  width: 600px;
+}
+
+.element {
+  background-color: grey;
+  height: 400px;
+  width: 400px;
+}
+
+.element {
+  background-color: white;
+  height: 200px;
+  width: 200px;
+}
+
+.element {
+  background-color: yellow;
+  height: 50px;
+  width: 50px;
+}
