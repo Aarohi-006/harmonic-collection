@@ -9,18 +9,21 @@
   width: 600px;
 }
 
+  /* not related to flex */
 .element {
   background-color: grey;
   height: 400px;
   width: 400px;
 }
 
+  /* not related to flex */
 .element {
   background-color: white;
   height: 200px;
   width: 200px;
 }
 
+  /* not related to flex */
 .element {
   background-color: yellow;
   height: 50px;
