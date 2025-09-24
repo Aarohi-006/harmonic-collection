@@ -1,28 +1,42 @@
-.container-1 {
-  align-items: center;
+body {
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: #cccccc; /* page background */
+}
 
-  /* not related to flex */
-  background-color: skyblue;
-  height: 400px;
+.square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Outer square */
+.blue {
   width: 400px;
-}
- 
-.property {
-  background-color: grey;
-  height: 320px;
-  width: 320px;
-}
-  
-.class {
-  background-color: white;
-  height: 240px;
-  width: 240px;
+  height: 400px;
+  background: #62b3e6;
 }
 
-.element {
-  background-color: yellow;
-  height: 160px;
+/* Second square */
+.gray {
+  width: 320px;
+  height: 320px;
+  background: #b3b3b3;
+}
+
+/* Third square */
+.white {
+  width: 240px;
+  height: 240px;
+  background: #ffffff;
+}
+
+/* Innermost square */
+.yellow {
   width: 160px;
-} 
+  height: 160px;
+  background: #f7df1e;
+}
