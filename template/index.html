@@ -1,20 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-    <section></section>
-      <div container-1="skyblue">
-        <div container-1="grey">
-          <div container-1="white">
-            <div container-1="yellow">
-      <div class="container-1">
-        <div class="element"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nesting Squares with HTML & CSS</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #cccccc; /* page background */
+    }
+
+    .square {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .blue {
+      width: 400px;
+      height: 400px;
+      background: #62b3e6;
+    }
+
+    .gray {
+      width: 320px;
+      height: 320px;
+      background: #b3b3b3;
+    }
+
+    .white {
+      width: 240px;
+      height: 240px;
+      background: #ffffff;
+    }
+
+    .yellow {
+      width: 160px;
+      height: 160px;
+      background: #f7df1e;
+    }
+  </style>
+</head>
+<body>
+  <div class="square blue">
+    <div class="square gray">
+      <div class="square white">
+        <div class="square yellow"></div>
       </div>
-      </div>
-      </div>
-    </section> 
+    </div>
+  </div>
+</body>
 </html>
