@@ -1,0 +1,41 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: #e5e5e5; /* light gray page background */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 200px 200px 80px;
+  grid-template-rows: 200px 120px 80px;
+  gap: 10px;             /* the black lines */
+  background: black;     /* fills the grid gap */
+  padding: 10px;         /* outer black border */
+  width: 500px;
+  height: 420px;
+}
+
+.red {
+  background: #e63946;   /* red block */
+  grid-column: 2 / 4;    /* spans columns 2 → 3 */
+  grid-row: 1 / 3;       /* spans rows 1 → 2 */
+}
+
+.blue {
+  background: #1d3557;   /* blue block */
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+.yellow {
+  background: #f1c40f;   /* yellow block */
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+}
+
+.white {
+  background: #ffffff;   /* white filler blocks */
+}
