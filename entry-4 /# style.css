@@ -1,46 +1,88 @@
-<!DOCTYPE html>
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background-color: #0d0d0d;
+  color: #f5f5f5;
+}
 
-</style>
-</head>
-<body>
-<header>
-<img src="469BF101-8876-4AEC-AF81-811462EE6AEA.jpeg" alt="The Watchlist Logo">
-<nav>
-<a href="#">Home</a>
-<a href="#">Reviews</a>
-<a href="#">Recommendations</a>
-<a href="#">Community</a>
-</nav>
-</header>
+/* Header */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+  padding: 1.5rem 2rem;
+}
+header img {
+  height: 80px;
+  width: auto;
+  margin-bottom: 1rem;
+}
+nav {
+  display: flex;
+  gap: 2rem;
+}
+nav a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: #a64dff;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(to bottom, #1a1a1a, #0d0d0d);
+}
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+.card {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card img {
+  width: 100%;
+  display: block;
+}
+.card h3 {
+  margin: 1rem;
+  font-size: 1.2rem;
+}
+.card p {
+  margin: 0 1rem 1rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #1a1a1a;
+  font-size: 0.9rem;
+  color: #aaa;
+}
 
 
-<section class="hero">
-<h2>Your Portal to Movies & Shows</h2>
-<p>Discover reviews, share opinions, and interact with fellow fans.</p>
-</section>
-
-
-<section class="grid">
-<div class="card">
-<img src="https://via.placeholder.com/200x300" alt="Movie Poster">
-<h3>Movie Title</h3>
-<p>Short review snippet or description goes here.</p>
-</div>
-<div class="card">
-<img src="https://via.placeholder.com/200x300" alt="Movie Poster">
-<h3>Show Title</h3>
-<p>Short review snippet or description goes here.</p>
-</div>
-<div class="card">
-<img src="https://via.placeholder.com/200x300" alt="Movie Poster">
-<h3>Another Title</h3>
-<p>Short review snippet or description goes here.</p>
-</div>
-</section>
-
-
-<footer>
-© 2025 The Watchlist. All rights reserved.
-</footer>
-</body>
-</html>
