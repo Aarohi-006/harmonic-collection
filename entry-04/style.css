@@ -2,7 +2,7 @@
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
-  background: radial-gradient(circle at top left, #fff2d6 0%, #fdf1ec 40%, #ffd6ba 100%);
+  background: radial-gradient(circle at top left, #fff3e6 0%, #ffd5c2 40%, #ffe5b4 100%);
   color: #2c2c2c;
   overflow-x: hidden;
 }
@@ -31,9 +31,10 @@ header {
 }
 .logo h1 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.5rem;
+  font-size: 2.7rem;
   letter-spacing: 2px;
   margin: 0;
+  text-shadow: 2px 2px #ffdf6b;
 }
 
 nav {
@@ -42,7 +43,7 @@ nav {
   margin-top: 0.8rem;
 }
 nav a {
-  color: #fff8e1;
+  color: #fffbe7;
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
@@ -59,7 +60,7 @@ nav a:hover {
 .hero {
   text-align: center;
   padding: 5rem 2rem;
-  background: linear-gradient(180deg, #ffdf6b, #ffb38a);
+  background: linear-gradient(180deg, #ffdf6b, #ffa372);
   color: #2c2c2c;
   position: relative;
   overflow: hidden;
@@ -71,7 +72,7 @@ nav a:hover {
   left: -100px;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.4) 1%, transparent 80%);
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 1%, transparent 80%);
   transform: rotate(25deg);
 }
 .hero h2 {
@@ -85,7 +86,7 @@ nav a:hover {
   font-size: 1.1rem;
 }
 .cta {
-  background-color: #ff4d6d;
+  background-color: #00bfa6;
   color: #fff;
   border: none;
   border-radius: 50px;
@@ -96,7 +97,7 @@ nav a:hover {
   transition: transform 0.3s ease, background 0.3s ease;
 }
 .cta:hover {
-  background: #ff1e4d;
+  background: #009c8a;
   transform: scale(1.08);
 }
 
@@ -107,9 +108,10 @@ nav a:hover {
 }
 .featured h2 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   margin-bottom: 2rem;
   color: #ff4d6d;
+  text-shadow: 1px 1px #ffd66b;
 }
 .grid {
   display: grid;
@@ -117,7 +119,7 @@ nav a:hover {
   gap: 2rem;
 }
 .card {
-  background: #fff;
+  background: #fffef8;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
@@ -204,3 +206,4 @@ footer {
   font-size: 0.9rem;
   letter-spacing: 0.5px;
 }
+
