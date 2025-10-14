@@ -1,81 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Watchlist</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header -->
   <header>
     <div class="logo">
-      <img src="https://cdn-icons-png.flaticon.com/512/5977/5977580.png" alt="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/3917/3917132.png" alt="logo">
       <h1>The Watchlist</h1>
     </div>
     <nav>
-      <a href="#reviews">Reviews</a>
-      <a href="#community">Community</a>
-      <a href="#contact">Contact</a>
+      <a href="#">Home</a>
+      <a href="#">Reviews</a>
+      <a href="#">Community</a>
+      <a href="#">Contact</a>
     </nav>
   </header>
 
-  <!-- Hero -->
   <section class="hero">
-    <h2>Your Gateway to Great Movies & Shows</h2>
-    <p>Discover, discuss, and review — join the community of passionate viewers.</p>
-    <button class="cta">Join the Portal</button>
+    <h2>Your Daily Dose of Movies & Magic</h2>
+    <p>Explore reviews, rate films, and connect with cinephiles from around the world.</p>
+    <button class="cta">Join the Community</button>
   </section>
 
-  <!-- Featured Reviews -->
-  <section id="reviews" class="featured">
-    <h2>Featured Reviews</h2>
+  <section class="featured">
+    <h2>Featured This Week</h2>
     <div class="grid">
       <div class="card">
-        <img src="https://i.ibb.co/qm5d8Xk/movie1.jpg" alt="Movie 1">
-        <div class="info">
-          <h3>Dune: Part Two</h3>
-          <p>Visually stunning and powerfully acted — Villeneuve crafts another sci-fi masterpiece.</p>
-        </div>
+        <img src="https://m.media-amazon.com/images/I/81p+xe8cbnL._AC_UF894,1000_QL80_.jpg" alt="Inception">
+        <h3>Inception</h3>
+        <p>A mind-bending thriller that blurs the line between dreams and reality.</p>
+        <button class="btn">Read Review</button>
       </div>
+
       <div class="card">
-        <img src="https://i.ibb.co/R4XmhN6/movie2.jpg" alt="Movie 2">
-        <div class="info">
-          <h3>Barbie</h3>
-          <p>A colorful, clever reflection on identity and imagination with sharp humor.</p>
-        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg" alt="Endgame">
+        <h3>Avengers: Endgame</h3>
+        <p>An epic conclusion to the saga that defined a generation of superheroes.</p>
+        <button class="btn">Read Review</button>
       </div>
+
       <div class="card">
-        <img src="https://i.ibb.co/pX1yZyr/movie3.jpg" alt="Movie 3">
-        <div class="info">
-          <h3>Oppenheimer</h3>
-          <p>Christopher Nolan delivers an explosive biopic full of intensity and depth.</p>
-        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/en/1/17/La_La_Land_%28film%29.png" alt="La La Land">
+        <h3>La La Land</h3>
+        <p>A colorful love letter to Los Angeles, music, and broken dreams.</p>
+        <button class="btn">Read Review</button>
       </div>
     </div>
   </section>
 
-  <!-- Community Portal -->
-  <section id="community" class="community">
-    <h2>Reviewer Community</h2>
-    <form class="comment-form">
-      <input type="text" placeholder="Your Name" required />
-      <textarea placeholder="Share your thoughts..." required></textarea>
-      <button type="submit">Post Review</button>
-    </form>
+  <section class="community">
+    <h2>Community Buzz</h2>
     <div class="comments">
-      <div class="comment">“Loved Dune’s cinematography!” <span>- Alex</span></div>
-      <div class="comment">“Barbie was surprisingly deep and emotional.” <span>- Priya</span></div>
+      <p>“Loved the cinematography in Inception — truly a masterpiece!” <span>- Alex</span></p>
+      <p>“Endgame was a rollercoaster of emotions. 10/10!” <span>- Priya</span></p>
+      <p>“La La Land’s music still haunts me. Pure magic.” <span>- Jordan</span></p>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer id="contact">
-    © <span id="year"></span> The Watchlist — Where Reviewers Connect
+  <footer>
+    <p>© 2025 The Watchlist | Made with ❤️ for movie lovers</p>
   </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
