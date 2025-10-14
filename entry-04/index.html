@@ -3,84 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Watchlist – Movie & Show Reviews</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>The Watchlist</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <!-- Header -->
   <header>
     <div class="logo">
-      <img src="logo.png" alt="The Watchlist Logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/5977/5977580.png" alt="logo">
       <h1>The Watchlist</h1>
     </div>
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Reviews</a>
-      <a href="#">Community</a>
-      <a href="#">Now Showing</a>
-      <a href="#">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#community">Community</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
-    <div class="hero-text">
-      <h2>🍿 Welcome to The Watchlist</h2>
-      <p>Your retro portal for honest reviews, cult classics, and film community chatter.</p>
-      <button class="cta">Join the Discussion 🎥</button>
-    </div>
+    <h2>Your Gateway to Great Movies & Shows</h2>
+    <p>Discover, discuss, and review — join the community of passionate viewers.</p>
+    <button class="cta">Join the Portal</button>
   </section>
 
-  <section class="featured">
-    <h2>🎬 Featured This Week</h2>
+  <!-- Featured Reviews -->
+  <section id="reviews" class="featured">
+    <h2>Featured Reviews</h2>
     <div class="grid">
       <div class="card">
-        <img src="poster1.jpg" alt="Movie Poster">
-        <div class="card-info">
-          <h3>Neon Nights</h3>
-          <p>A pulsing 80s fever dream — bold, loud, and unforgettable.</p>
-          <button class="review-btn">Read Review</button>
+        <img src="https://i.ibb.co/qm5d8Xk/movie1.jpg" alt="Movie 1">
+        <div class="info">
+          <h3>Dune: Part Two</h3>
+          <p>Visually stunning and powerfully acted — Villeneuve crafts another sci-fi masterpiece.</p>
         </div>
       </div>
       <div class="card">
-        <img src="poster2.jpg" alt="Movie Poster">
-        <div class="card-info">
-          <h3>Midnight Melodies</h3>
-          <p>Jazz, heartbreak, and flickering city lights in vintage glory.</p>
-          <button class="review-btn">Read Review</button>
+        <img src="https://i.ibb.co/R4XmhN6/movie2.jpg" alt="Movie 2">
+        <div class="info">
+          <h3>Barbie</h3>
+          <p>A colorful, clever reflection on identity and imagination with sharp humor.</p>
         </div>
       </div>
       <div class="card">
-        <img src="poster3.jpg" alt="Movie Poster">
-        <div class="card-info">
-          <h3>The Golden Frame</h3>
-          <p>An ode to the golden age — cinematic nostalgia at its finest.</p>
-          <button class="review-btn">Read Review</button>
+        <img src="https://i.ibb.co/pX1yZyr/movie3.jpg" alt="Movie 3">
+        <div class="info">
+          <h3>Oppenheimer</h3>
+          <p>Christopher Nolan delivers an explosive biopic full of intensity and depth.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="community">
-    <h2>🎤 Community Buzz</h2>
+  <!-- Community Portal -->
+  <section id="community" class="community">
+    <h2>Reviewer Community</h2>
+    <form class="comment-form">
+      <input type="text" placeholder="Your Name" required />
+      <textarea placeholder="Share your thoughts..." required></textarea>
+      <button type="submit">Post Review</button>
+    </form>
     <div class="comments">
-      <div class="comment">
-        <p>“The Watchlist is my go-to for discovering old-school gems!”</p>
-        <span>– ReelLover91</span>
-      </div>
-      <div class="comment">
-        <p>“Midnight Melodies had me feeling every frame. Such emotion!”</p>
-        <span>– FilmFanatic</span>
-      </div>
-      <div class="comment">
-        <p>“Finally, a place that celebrates both modern and classic cinema!”</p>
-        <span>– CineMuse</span>
-      </div>
+      <div class="comment">“Loved Dune’s cinematography!” <span>- Alex</span></div>
+      <div class="comment">“Barbie was surprisingly deep and emotional.” <span>- Priya</span></div>
     </div>
   </section>
 
-  <footer>
-    <p>© 2025 The Watchlist | Crafted for movie lovers worldwide 🎞️</p>
+  <!-- Footer -->
+  <footer id="contact">
+    © <span id="year"></span> The Watchlist — Where Reviewers Connect
   </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
