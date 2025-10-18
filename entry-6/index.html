@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Watchlist</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <!-- Flickity CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- === Header === -->
+  <header>
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/3917/3917132.png" alt="logo">
+      <h1>The Watchlist</h1>
+    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Reviews</a>
+      <a href="#">Community</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- === Hero Section === -->
+  <section class="hero">
+    <h2>Your Daily Dose of Movies & Magic</h2>
+    <p>Explore reviews, rate films, and connect with cinephiles from around the world.</p>
+    <button class="cta">Join the Community</button>
+  </section>
+
+  <!-- === Carousel: Coming Soon === -->
+  <section class="carousel-section">
+    <h2>Coming Soon</h2>
+    <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 3000 }'>
+      <div class="carousel-cell"><img src="https://upload.wikimedia.org/wikipedia/en/9/9b/Dune_Part_Two_poster.jpg" alt="Dune: Part Two"></div>
+      <div class="carousel-cell"><img src="https://upload.wikimedia.org/wikipedia/en/3/31/Joker_Folie_%C3%A0_Deux_poster.jpg" alt="Joker 2"></div>
+      <div class="carousel-cell"><img src="https://upload.wikimedia.org/wikipedia/en/0/05/Deadpool_%26_Wolverine_poster.jpg" alt="Deadpool & Wolverine"></div>
+      <div class="carousel-cell"><img src="https://upload.wikimedia.org/wikipedia/en/6/65/Inside_Out_2_poster.jpg" alt="Inside Out 2"></div>
+      <div class="carousel-cell"><img src="https://upload.wikimedia.org/wikipedia/en/f/fc/Venom_The_Last_Dance_poster.jpg" alt="Venom: The Last Dance"></div>
+    </div>
+  </section>
+
+  <!-- === Carousel: Trending Celebrities === -->
+  <section class="carousel-section">
+    <h2>Trending Celebrities</h2>
+    <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 3500 }'>
+      <div class="carousel-cell"><img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Zendaya_2023_%28cropped%29.jpg" alt="Zendaya"></div>
+      <div class="carousel-cell"><img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Timoth%C3%A9e_Chalamet_2019.jpg" alt="Timothée Chalamet"></div>
+      <div class="carousel-cell"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Florence_Pugh_in_2023.jpg" alt="Florence Pugh"></div>
+      <div class="carousel-cell"><img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Adam_Driver_in_2023.jpg" alt="Adam Driver"></div>
+      <div class="carousel-cell"><img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Margot_Robbie_in_2023.jpg" alt="Margot Robbie"></div>
+      <div class="carousel-cell"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Cillian_Murphy-2023.jpg" alt="Cillian Murphy"></div>
+    </div>
+  </section>
+
+  <!-- === Carousel: Fan Favorites === -->
+  <section class="carousel-section">
+    <h2>Fan Favorites</h2>
+    <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 3200 }'>
+      <div class="carousel-cell"><img src="https://upload.wikimedia.org/wikipedia/en/0/0b/Barbie_2023_poster.jpg" alt="Barbie"></div>
+      <div class="carousel-cell"><img src="https://upload.wikimedia.org/wikipedia/en/8/8e/Oppenheimer_%282023%29.jpg" alt="Oppenheimer"></div>
+      <div class="carousel-cell"><img src="https://upload.wikimedia.org/wikipedia/en/7/7f/La_La_Land_%28film%29.png" alt="La La Land"></div>
+      <div class="carousel-cell"><img src="https://upload.wikimedia.org/wikipedia/en/0/00/Parasite_%282019_film%29.png" alt="Parasite"></div>
+      <div class="carousel-cell"><img src="https://upload.wikimedia.org/wikipedia/en/4/4d/Avengers_Infinity_War_poster.jpg" alt="Avengers: Infinity War"></div>
+      <div class="carousel-cell"><img src="https://upload.wikimedia.org/wikipedia/en/2/22/Titanic_poster.jpg" alt="Titanic"></div>
+    </div>
+  </section>
+
+  <!-- Flickity JS -->
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+</body>
+</html>
