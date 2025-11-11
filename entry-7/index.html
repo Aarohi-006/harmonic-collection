@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Watchlist</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+</head>
+<body>
+
+  <!-- === Top Logo === -->
+  <div class="top-logo">
+    <img src="logo.png" alt="The Watchlist Logo">
+  </div>
+
+  <!-- === Header === -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="The Watchlist Logo">
+      <h1>The Watchlist</h1>
+    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Genres</a>
+      <a href="#">Reviews</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- === Hero Section === -->
+  <section class="hero">
+    <h2>Your Ultimate Film & Series Companion</h2>
+    <p>Discover, track, and review your favorite titles — all in one place.</p>
+    <button class="cta">Explore Now</button>
+  </section>
+
+  <!-- === Carousel Section: Trending === -->
+  <section class="carousel-section">
+    <h2>Trending Now</h2>
+    <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 2500 }'>
+      <div class="carousel-cell">Everything Everywhere All at Once</div>
+      <div class="carousel-cell">Top Gun: Maverick</div>
+      <div class="carousel-cell">Avatar: The Way of Water</div>
+      <div class="carousel-cell">The Batman</div>
+      <div class="carousel-cell">Black Panther: Wakanda Forever</div>
+    </div>
+  </section>
+
+  <!-- === Carousel Section: Coming Soon === -->
+  <section class="carousel-section">
+    <h2>Coming Soon</h2>
+    <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 3000 }'>
+      <div class="carousel-cell">Dune: Part Two</div>
+      <div class="carousel-cell">Indiana Jones and the Dial of Destiny</div>
+      <div class="carousel-cell">Guardians of the Galaxy Vol. 3</div>
+      <div class="carousel-cell">The Marvels</div>
+      <div class="carousel-cell">Killers of the Flower Moon</div>
+    </div>
+  </section>
+
+  <!-- === Carousel Section: Editor's Picks === -->
+  <section class="carousel-section">
+    <h2>Editor's Picks</h2>
+    <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 2800 }'>
+      <div class="carousel-cell">Parasite</div>
+      <div class="carousel-cell">Joker</div>
+      <div class="carousel-cell">The Grand Budapest Hotel</div>
+      <div class="carousel-cell">La La Land</div>
+      <div class="carousel-cell">Mad Max: Fury Road</div>
+    </div>
+  </section>
+
+  <!-- === Review Section === -->
+  <section class="review-section">
+    <h2>Share Your Review</h2>
+    <div class="review-form">
+      <textarea id="reviewInput" placeholder="Write your review here..."></textarea>
+      <button id="submitReview" class="cta">Submit</button>
+    </div>
+
+    <div class="reviews-list">
+      <h3>What others are saying:</h3>
+      <ul id="reviewList"></ul>
+    </div>
+  </section>
+
+  <!-- === Footer === -->
+  <footer>
+    <p>© 2025 The Watchlist. All rights reserved.</p>
+  </footer>
+
+  <!-- === JavaScript for Reviews === -->
+  <script>
+  const reviewInput = document.getElementById('reviewInput');
+  const submitBtn = document.getElementById('submitReview');
+  const reviewList = document.getElementById('reviewList');
+
+  submitBtn.addEventListener('click', () => {
+    const text = reviewInput.value.trim();
+    if (text === '') {
+      alert('Please write something before submitting!');
+      return;
+    }
+
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <p>${text}</p>
+      <div class="reaction-buttons">
+        <button class="like-btn">👍</button>
+        <button class="dislike-btn">👎</button>
+      </div>
+    `;
+
+    const likeBtn = li.querySelector('.like-btn');
+    const dislikeBtn = li.querySelector('.dislike-btn');
+
+    likeBtn.addEventListener('click', () => {
+      likeBtn.classList.toggle('active');
+      dislikeBtn.classList.remove('active');
+    });
+
+    dislikeBtn.addEventListener('click', () => {
+      dislikeBtn.classList.toggle('active');
+      likeBtn.classList.remove('active');
+    });
+
+    reviewList.appendChild(li);
+    reviewInput.value = '';
+  });
+
+  const observer = new MutationObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.addedNodes.length > 0) {
+        entry.addedNodes[0].style.opacity = 0;
+        setTimeout(() => entry.addedNodes[0].style.transition = 'opacity 0.5s', 0);
+        setTimeout(() => entry.addedNodes[0].style.opacity = 1, 50);
+      }
+    });
+  });
+  observer.observe(reviewList, { childList: true });
+  </script>
+
+</body>
+</html>
