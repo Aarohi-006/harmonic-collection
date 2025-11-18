@@ -48,11 +48,11 @@
   <section class="carousel-section">
     <h2>Trending Now</h2>
     <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 2500 }'>
-      <div class="carousel-cell" data-title="Everything Everywhere All at Once">Everything Everywhere All at Once</div>
-      <div class="carousel-cell" data-title="Top Gun: Maverick">Top Gun: Maverick</div>
-      <div class="carousel-cell" data-title="Avatar: The Way of Water">Avatar: The Way of Water</div>
-      <div class="carousel-cell" data-title="The Batman">The Batman</div>
-      <div class="carousel-cell" data-title="Black Panther: Wakanda Forever">Black Panther: Wakanda Forever</div>
+      <div class="carousel-cell" data-title="Everything Everywhere All at Once" data-year="2022" data-rating="8.0" data-desc="A mind-bending adventure that explores multiple realities.">Everything Everywhere All at Once</div>
+      <div class="carousel-cell" data-title="Top Gun: Maverick" data-year="2022" data-rating="8.5" data-desc="The iconic fighter pilot story returns with stunning action.">Top Gun: Maverick</div>
+      <div class="carousel-cell" data-title="Avatar: The Way of Water" data-year="2022" data-rating="7.8" data-desc="Return to Pandora in this visually breathtaking sequel.">Avatar: The Way of Water</div>
+      <div class="carousel-cell" data-title="The Batman" data-year="2022" data-rating="7.9" data-desc="A dark, detective-driven take on the Caped Crusader.">The Batman</div>
+      <div class="carousel-cell" data-title="Black Panther: Wakanda Forever" data-year="2022" data-rating="7.3" data-desc="The legacy of Wakanda continues after T’Challa.">Black Panther: Wakanda Forever</div>
     </div>
   </section>
 
@@ -60,11 +60,11 @@
   <section class="carousel-section">
     <h2>Coming Soon</h2>
     <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 3000 }'>
-      <div class="carousel-cell" data-title="Dune: Part Two">Dune: Part Two</div>
-      <div class="carousel-cell" data-title="Indiana Jones and the Dial of Destiny">Indiana Jones and the Dial of Destiny</div>
-      <div class="carousel-cell" data-title="Guardians of the Galaxy Vol. 3">Guardians of the Galaxy Vol. 3</div>
-      <div class="carousel-cell" data-title="The Marvels">The Marvels</div>
-      <div class="carousel-cell" data-title="Killers of the Flower Moon">Killers of the Flower Moon</div>
+      <div class="carousel-cell" data-title="Dune: Part Two" data-year="2025" data-rating="N/A" data-desc="The epic sci-fi saga continues on Arrakis.">Dune: Part Two</div>
+      <div class="carousel-cell" data-title="Indiana Jones and the Dial of Destiny" data-year="2023" data-rating="N/A" data-desc="Indy returns on another thrilling archaeological adventure.">Indiana Jones and the Dial of Destiny</div>
+      <div class="carousel-cell" data-title="Guardians of the Galaxy Vol. 3" data-year="2023" data-rating="N/A" data-desc="Our favorite intergalactic misfits are back for more fun.">Guardians of the Galaxy Vol. 3</div>
+      <div class="carousel-cell" data-title="The Marvels" data-year="2023" data-rating="N/A" data-desc="Superheroes unite in this exciting Marvel sequel.">The Marvels</div>
+      <div class="carousel-cell" data-title="Killers of the Flower Moon" data-year="2023" data-rating="N/A" data-desc="A dark historical thriller from Martin Scorsese.">Killers of the Flower Moon</div>
     </div>
   </section>
 
@@ -72,11 +72,25 @@
   <section class="carousel-section">
     <h2>Editor's Picks</h2>
     <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 2800 }'>
-      <div class="carousel-cell" data-title="Parasite">Parasite</div>
-      <div class="carousel-cell" data-title="Joker">Joker</div>
-      <div class="carousel-cell" data-title="The Grand Budapest Hotel">The Grand Budapest Hotel</div>
-      <div class="carousel-cell" data-title="La La Land">La La Land</div>
-      <div class="carousel-cell" data-title="Mad Max: Fury Road">Mad Max: Fury Road</div>
+      <div class="carousel-cell" data-title="Parasite" data-year="2019" data-rating="8.6" data-desc="A darkly comedic thriller exploring class divides.">Parasite</div>
+      <div class="carousel-cell" data-title="Joker" data-year="2019" data-rating="8.5" data-desc="A gritty origin story of the infamous villain.">Joker</div>
+      <div class="carousel-cell" data-title="The Grand Budapest Hotel" data-year="2014" data-rating="8.1" data-desc="A whimsical tale set in a luxurious European hotel.">The Grand Budapest Hotel</div>
+      <div class="carousel-cell" data-title="La La Land" data-year="2016" data-rating="8.0" data-desc="A romantic musical about love and ambition in LA.">La La Land</div>
+      <div class="carousel-cell" data-title="Mad Max: Fury Road" data-year="2015" data-rating="8.1" data-desc="A high-octane post-apocalyptic action adventure.">Mad Max: Fury Road</div>
+    </div>
+  </section>
+
+  <!-- === Carousel Section: Popular Interests === -->
+  <section class="carousel-section">
+    <h2>Popular Interests</h2>
+    <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 2500 }'>
+      <div class="carousel-cell">Action</div>
+      <div class="carousel-cell">Comedy</div>
+      <div class="carousel-cell">Drama</div>
+      <div class="carousel-cell">Horror</div>
+      <div class="carousel-cell">Romance</div>
+      <div class="carousel-cell">Sci-Fi</div>
+      <div class="carousel-cell">Documentary</div>
     </div>
   </section>
 
@@ -110,14 +124,16 @@
   <div class="modal-overlay" id="modalOverlay">
     <div class="modal">
       <h3 id="modalTitle"></h3>
-      <p>More info about this movie will appear here.</p>
+      <p id="modalYear"></p>
+      <p id="modalRating"></p>
+      <p id="modalDesc"></p>
       <button class="close-modal" id="closeModal">Close</button>
     </div>
   </div>
 
   <!-- === JavaScript === -->
   <script>
-    // === Review System ===
+    // Review System
     const reviewInput = document.getElementById('reviewInput');
     const submitBtn = document.getElementById('submitReview');
     const reviewList = document.getElementById('reviewList');
@@ -149,7 +165,6 @@
           <button class="dislike-btn">👎</button>
         </div>
       `;
-
       const likeBtn = li.querySelector('.like-btn');
       const dislikeBtn = li.querySelector('.dislike-btn');
 
@@ -179,22 +194,30 @@
     });
     observer.observe(reviewList, { childList: true });
 
-    // === Language Dropdown ===
+    // Language Dropdown
     const langDropdown = document.getElementById('languageDropdown');
     langDropdown.addEventListener('click', () => {
       langDropdown.classList.toggle('active');
     });
 
-    // === Movie Info Modal ===
+    // Modal
     const modalOverlay = document.getElementById('modalOverlay');
     const modalTitle = document.getElementById('modalTitle');
+    const modalYear = document.getElementById('modalYear');
+    const modalRating = document.getElementById('modalRating');
+    const modalDesc = document.getElementById('modalDesc');
     const closeModal = document.getElementById('closeModal');
     const carouselCells = document.querySelectorAll('.carousel-cell');
 
     carouselCells.forEach(cell => {
       cell.addEventListener('click', () => {
-        modalTitle.textContent = cell.dataset.title;
-        modalOverlay.style.display = 'flex';
+        if(cell.dataset.title){ // only movies have data
+          modalTitle.textContent = cell.dataset.title;
+          modalYear.textContent = "Year: " + cell.dataset.year;
+          modalRating.textContent = "Rating: " + cell.dataset.rating;
+          modalDesc.textContent = cell.dataset.desc;
+          modalOverlay.style.display = 'flex';
+        }
       });
     });
 
