@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Watchlist</title>
+<link rel="stylesheet" href="style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+</head>
+<body>
+
+<canvas id="dots-background"></canvas>
+
+<div class="top-logo">
+  <img src="logo.png" alt="The Watchlist Logo">
+</div>
+
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="The Watchlist Logo">
+    <h1>The Watchlist</h1>
+  </div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Genres</a>
+    <a href="#">Reviews</a>
+    <div class="language-dropdown" id="languageDropdown">
+      Language
+      <div class="language-menu">
+        <div data-lang="en">English</div>
+        <div data-lang="es">Spanish</div>
+        <div data-lang="fr">French</div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="filters">
+  <button data-genre="all" class="active">All</button>
+  <button data-genre="action">Action</button>
+  <button data-genre="drama">Drama</button>
+  <button data-genre="comedy">Comedy</button>
+  <button data-genre="sci-fi">Sci-Fi</button>
+</div>
+
+<section class="carousel-section">
+  <h2>Trending Now</h2>
+  <div class="carousel" data-carousel="trending">
+    <div class="carousel-cell" data-genre="action" data-title="Top Gun: Maverick" data-year="2022" data-rating="8.5" data-desc="The iconic fighter pilot story returns with stunning action." data-trailer="https://www.youtube.com/embed/qAfbp4k1HfM">
+      Top Gun: Maverick
+    </div>
+    <div class="carousel-cell" data-genre="drama" data-title="Everything Everywhere All at Once" data-year="2022" data-rating="8.0" data-desc="A mind-bending adventure that explores multiple realities." data-trailer="https://www.youtube.com/embed/wxN1T1uxQ2g">
+      Everything Everywhere All at Once
+    </div>
+    <div class="carousel-cell" data-genre="action" data-title="Avatar: The Way of Water" data-year="2022" data-rating="7.8" data-desc="Return to Pandora in this visually breathtaking sequel." data-trailer="https://www.youtube.com/embed/5PSNL1qE6VY">
+      Avatar: The Way of Water
+    </div>
+  </div>
+</section>
+
+<section class="carousel-section">
+  <h2>Editor's Picks</h2>
+  <div class="carousel" data-carousel="editors">
+    <div class="carousel-cell" data-genre="drama" data-title="Parasite" data-year="2019" data-rating="8.6" data-desc="A darkly comedic thriller exploring class divides." data-trailer="https://www.youtube.com/embed/5xH0HfJHsaY">
+      Parasite
+    </div>
+    <div class="carousel-cell" data-genre="drama" data-title="Joker" data-year="2019" data-rating="8.5" data-desc="A gritty origin story of the infamous villain." data-trailer="https://www.youtube.com/embed/zAGVQLHvwOY">
+      Joker
+    </div>
+    <div class="carousel-cell" data-genre="comedy" data-title="The Grand Budapest Hotel" data-year="2014" data-rating="8.1" data-desc="A whimsical tale set in a luxurious European hotel." data-trailer="https://www.youtube.com/embed/1Fg5iWmQjwk">
+      The Grand Budapest Hotel
+    </div>
+  </div>
+</section>
+
+<section class="review-section">
+  <h2>Share Your Review</h2>
+  <div class="review-form">
+    <textarea id="reviewInput" placeholder="Write your review here..."></textarea>
+    <div class="star-rating" id="starRating">
+      <span data-star="1">★</span>
+      <span data-star="2">★</span>
+      <span data-star="3">★</span>
+      <span data-star="4">★</span>
+      <span data-star="5">★</span>
+    </div>
+    <button id="submitReview" class="cta">Submit</button>
+  </div>
+  <div class="reviews-list">
+    <h3>What others are saying:</h3>
+    <ul id="reviewList"></ul>
+  </div>
+</section>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <h3 id="modalTitle"></h3>
+    <p id="modalYear"></p>
+    <p id="modalRating"></p>
+    <p id="modalDesc"></p>
+    <div id="modalTrailer" style="margin-top:1rem;"></div>
+    <button class="close-modal" id="closeModal">Close</button>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 The Watchlist. All rights reserved.</p>
+</footer>
+
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
