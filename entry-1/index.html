@@ -1,26 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page Title - Entry 1</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div>
-      <h2>REVIEW SITE OF MOVIES/SHOWS</h2>
-      <p>The site is revolving around the top picks of movies and shows of the month and year.</p> All related to entertainment world.</p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Watchlist - Home</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="dots-background"></div>
+
+<header>
+  <h1>My Watchlist</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="movies.html">Movies</a>
+    <a href="series.html">Series</a>
+    <a href="comingsoon.html">Coming Soon</a>
+    <a href="toprated.html">Top Rated</a>
+    <a href="genres.html">Genres</a>
+    <a href="review.html">Reviews</a>
+    <a href="language.html">Language</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h2>Welcome to Your Ultimate Watchlist</h2>
+    <p>Discover movies, series, and shows you’ll love. Explore trending titles, top rated picks, and more.</p>
+  </section>
+
+  <section class="carousel-section">
+    <h2>Trending Movies</h2>
+    <div class="carousel">
+      <div class="carousel-item" data-trailer="https://www.youtube.com/embed/abc123" data-language="english">
+        <img src="images/poster1.jpg" alt="Poster 1">
+        <p>Movie 1</p>
+      </div>
+      <div class="carousel-item" data-trailer="https://www.youtube.com/embed/def456" data-language="hindi">
+        <img src="images/poster2.jpg" alt="Poster 2">
+        <p>Movie 2</p>
+      </div>
+      <div class="carousel-item" data-trailer="https://www.youtube.com/embed/ghi789" data-language="spanish">
+        <img src="images/poster3.jpg" alt="Poster 3">
+        <p>Movie 3</p>
+      </div>
     </div>
+  </section>
+</main>
 
-   <div> 
-    <p>It will include clips and trailers of upcoming content. There will be video interviews of celebrities.</p>
-   </div>
-  </body>
+<footer>
+  <p>&copy; 2025 My Watchlist. All rights reserved.</p>
+</footer>
 
-   <div> The site will not be restricted to one langauge or region but it will include diverse languages and content.</p>
-  <div> 
-    <p> There will be a feature where audience can interact and recommend each other with new films and dramas.</p>
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <iframe id="trailer" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
 
-    <div>
-      <p> I hope the site will be successful enough to make the movie buffs come together and interact on various topics related to the entertainment area.</p>
+<script src="js/main.js"></script>
+</body>
 </html>
+
