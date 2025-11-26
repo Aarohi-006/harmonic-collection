@@ -4,65 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Watchlist - Home</title>
-  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body style="margin:0; font-family: Arial, sans-serif; text-align:center;
+             background: linear-gradient(-45deg, #000000, #ffcc00, #ff8000, #000000);
+             height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;">
 
-<div class="dots-background"></div>
+  <!-- Header -->
+  <header style="background: rgba(255,255,255,0.7); width:100%; padding:15px 0; position:sticky; top:0;">
+    <h1 style="color:#000000; margin:0.2em 0;">My Watchlist</h1>
+    <nav>
+      <a href="index.html" style="margin:0 10px; color:#000000; text-decoration:none;">Home</a>
+      <a href="movies.html" style="margin:0 10px; color:#000000; text-decoration:none;">Movies</a>
+      <a href="series.html" style="margin:0 10px; color:#000000; text-decoration:none;">Series</a>
+      <a href="comingsoon.html" style="margin:0 10px; color:#000000; text-decoration:none;">Coming Soon</a>
+      <a href="toprated.html" style="margin:0 10px; color:#000000; text-decoration:none;">Top Rated</a>
+    </nav>
+  </header>
 
-<header>
-  <h1>My Watchlist</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="movies.html">Movies</a>
-    <a href="series.html">Series</a>
-    <a href="comingsoon.html">Coming Soon</a>
-    <a href="toprated.html">Top Rated</a>
-    <a href="genres.html">Genres</a>
-    <a href="review.html">Reviews</a>
-    <a href="language.html">Language</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
-<main>
-  <section class="hero">
-    <h2>Welcome to Your Ultimate Watchlist</h2>
-    <p>Discover movies, series, and shows you’ll love. Explore trending titles, top rated picks, and more.</p>
+  <!-- Hero Section -->
+  <section style="margin:40px 0;">
+    <h2 style="color:#000000;">Welcome to Your Ultimate Watchlist</h2>
+    <p style="max-width:600px; margin:auto; color:#111111;">Discover movies, series, and shows you’ll love. Explore trending titles, top rated picks, and more.</p>
   </section>
 
-  <section class="carousel-section">
-    <h2>Trending Movies</h2>
-    <div class="carousel">
-      <div class="carousel-item" data-trailer="https://www.youtube.com/embed/abc123" data-language="english">
-        <img src="images/poster1.jpg" alt="Poster 1">
-        <p>Movie 1</p>
+  <!-- Carousel Section -->
+  <section>
+    <h2 style="color:#000000;">Trending Movies</h2>
+    <div style="display:flex; overflow-x:auto; gap:15px; padding:10px; justify-content:center;">
+      <div style="flex:0 0 auto; width:200px; background:rgba(255,255,255,0.7); border-radius:10px; padding:10px;">
+        <img src="images/poster1.jpg" alt="Poster 1" style="width:100%; border-radius:8px; margin-bottom:5px;">
+        <p style="color:#000000;">Movie 1</p>
       </div>
-      <div class="carousel-item" data-trailer="https://www.youtube.com/embed/def456" data-language="hindi">
-        <img src="images/poster2.jpg" alt="Poster 2">
-        <p>Movie 2</p>
+      <div style="flex:0 0 auto; width:200px; background:rgba(255,255,255,0.7); border-radius:10px; padding:10px;">
+        <img src="images/poster2.jpg" alt="Poster 2" style="width:100%; border-radius:8px; margin-bottom:5px;">
+        <p style="color:#000000;">Movie 2</p>
       </div>
-      <div class="carousel-item" data-trailer="https://www.youtube.com/embed/ghi789" data-language="spanish">
-        <img src="images/poster3.jpg" alt="Poster 3">
-        <p>Movie 3</p>
+      <div style="flex:0 0 auto; width:200px; background:rgba(255,255,255,0.7); border-radius:10px; padding:10px;">
+        <img src="images/poster3.jpg" alt="Poster 3" style="width:100%; border-radius:8px; margin-bottom:5px;">
+        <p style="color:#000000;">Movie 3</p>
+      </div>
+      <div style="flex:0 0 auto; width:200px; background:rgba(255,255,255,0.7); border-radius:10px; padding:10px;">
+        <img src="images/poster4.jpg" alt="Poster 4" style="width:100%; border-radius:8px; margin-bottom:5px;">
+        <p style="color:#000000;">Movie 4</p>
+      </div>
+      <div style="flex:0 0 auto; width:200px; background:rgba(255,255,255,0.7); border-radius:10px; padding:10px;">
+        <img src="images/poster5.jpg" alt="Poster 5" style="width:100%; border-radius:8px; margin-bottom:5px;">
+        <p style="color:#000000;">Movie 5</p>
       </div>
     </div>
   </section>
-</main>
 
-<footer>
-  <p>&copy; 2025 My Watchlist. All rights reserved.</p>
-</footer>
+  <!-- Footer -->
+  <footer style="margin-top:40px; padding:15px; width:100%; color:#000000;">
+    &copy; 2025 My Watchlist. All rights reserved.
+  </footer>
 
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <iframe id="trailer" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
-  </div>
-</div>
-
-<script src="js/main.js"></script>
 </body>
 </html>
-
