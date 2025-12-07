@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The Watchlist</title>
-<link rel="stylesheet" href="style.css" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Bebas+Neue&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Watchlist</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" />
 </head>
 <body>
 
 <canvas id="dots-background"></canvas>
 
+<!-- Top Logo -->
 <div class="top-logo">
-  <img src="logo.png" alt="The Watchlist Logo">
+  <img src="logo.png" alt="The Watchlist Logo" />
+  <h1>The Watchlist</h1>
 </div>
 
+<!-- Header with Nav -->
 <header>
   <div class="logo">
-    <img src="logo.png" alt="The Watchlist Logo">
+    <img src="logo.png" alt="The Watchlist Logo" />
     <h1>The Watchlist</h1>
   </div>
   <nav>
     <a href="#">Home</a>
     <a href="#">Genres</a>
     <a href="#">Reviews</a>
-    <div class="language-dropdown" id="languageDropdown">
+    <div class="language-dropdown">
       Language
       <div class="language-menu">
         <div data-lang="en">English</div>
@@ -36,6 +38,7 @@
   </nav>
 </header>
 
+<!-- Filters -->
 <div class="filters">
   <button data-genre="all" class="active">All</button>
   <button data-genre="action">Action</button>
@@ -44,36 +47,37 @@
   <button data-genre="sci-fi">Sci-Fi</button>
 </div>
 
+<!-- Trending Carousel -->
 <section class="carousel-section">
   <h2>Trending Now</h2>
   <div class="carousel" data-carousel="trending">
-    <div class="carousel-cell" data-genre="action" data-title="Top Gun: Maverick" data-year="2022" data-rating="8.5" data-desc="The iconic fighter pilot story returns with stunning action." data-trailer="https://www.youtube.com/embed/qAfbp4k1HfM">
-      Top Gun: Maverick
-    </div>
-    <div class="carousel-cell" data-genre="drama" data-title="Everything Everywhere All at Once" data-year="2022" data-rating="8.0" data-desc="A mind-bending adventure that explores multiple realities." data-trailer="https://www.youtube.com/embed/wxN1T1uxQ2g">
-      Everything Everywhere All at Once
-    </div>
-    <div class="carousel-cell" data-genre="action" data-title="Avatar: The Way of Water" data-year="2022" data-rating="7.8" data-desc="Return to Pandora in this visually breathtaking sequel." data-trailer="https://www.youtube.com/embed/5PSNL1qE6VY">
-      Avatar: The Way of Water
-    </div>
+    <div class="carousel-cell" data-genre="action" data-title="Top Gun: Maverick" data-year="2022" data-rating="8.5" data-desc="The iconic fighter pilot story returns with stunning action." data-trailer="https://www.youtube.com/embed/qAfbp4k1HfM">Top Gun: Maverick</div>
+    <div class="carousel-cell" data-genre="drama" data-title="Everything Everywhere All at Once" data-year="2022" data-rating="8.0" data-desc="A mind-bending adventure exploring multiple realities." data-trailer="https://www.youtube.com/embed/wxN1T1uxQ2g">Everything Everywhere All at Once</div>
+    <div class="carousel-cell" data-genre="action" data-title="Avatar: The Way of Water" data-year="2022" data-rating="7.8" data-desc="Return to Pandora in this visually breathtaking sequel." data-trailer="https://www.youtube.com/embed/5PSNL1qE6VY">Avatar: The Way of Water</div>
   </div>
 </section>
 
+<!-- Editor's Picks -->
 <section class="carousel-section">
   <h2>Editor's Picks</h2>
   <div class="carousel" data-carousel="editors">
-    <div class="carousel-cell" data-genre="drama" data-title="Parasite" data-year="2019" data-rating="8.6" data-desc="A darkly comedic thriller exploring class divides." data-trailer="https://www.youtube.com/embed/5xH0HfJHsaY">
-      Parasite
-    </div>
-    <div class="carousel-cell" data-genre="drama" data-title="Joker" data-year="2019" data-rating="8.5" data-desc="A gritty origin story of the infamous villain." data-trailer="https://www.youtube.com/embed/zAGVQLHvwOY">
-      Joker
-    </div>
-    <div class="carousel-cell" data-genre="comedy" data-title="The Grand Budapest Hotel" data-year="2014" data-rating="8.1" data-desc="A whimsical tale set in a luxurious European hotel." data-trailer="https://www.youtube.com/embed/1Fg5iWmQjwk">
-      The Grand Budapest Hotel
-    </div>
+    <div class="carousel-cell" data-genre="drama" data-title="Parasite" data-year="2019" data-rating="8.6" data-desc="A darkly comedic thriller exploring class divides." data-trailer="https://www.youtube.com/embed/5xH0HfJHsaY">Parasite</div>
+    <div class="carousel-cell" data-genre="drama" data-title="Joker" data-year="2019" data-rating="8.5" data-desc="A gritty origin story of the infamous villain." data-trailer="https://www.youtube.com/embed/zAGVQLHvwOY">Joker</div>
+    <div class="carousel-cell" data-genre="comedy" data-title="The Grand Budapest Hotel" data-year="2014" data-rating="8.1" data-desc="A whimsical tale set in a luxurious European hotel." data-trailer="https://www.youtube.com/embed/1Fg5iWmQjwk">The Grand Budapest Hotel</div>
   </div>
 </section>
 
+<!-- Coming Soon -->
+<section class="carousel-section">
+  <h2>Coming Soon</h2>
+  <div class="carousel" data-carousel="comingsoon">
+    <div class="carousel-cell" data-genre="action" data-title="Deadpool & Wolverine" data-year="2025" data-rating="—" data-desc="Marvel’s chaotic duo returns in an explosive multiverse adventure." data-trailer="https://www.youtube.com/embed/73_1biulkYk">Deadpool & Wolverine</div>
+    <div class="carousel-cell" data-genre="sci-fi" data-title="Tron: Ares" data-year="2025" data-rating="—" data-desc="A new chapter in the Tron universe exploring digital-human boundaries." data-trailer="https://www.youtube.com/embed/OeVapCrI1pY">Tron: Ares</div>
+    <div class="carousel-cell" data-genre="drama" data-title="The Last Horizon" data-year="2025" data-rating="—" data-desc="A gripping survival drama set on a distant icy world." data-trailer="https://www.youtube.com/embed/DP-V-T9hbHQ">The Last Horizon</div>
+  </div>
+</section>
+
+<!-- Review Section -->
 <section class="review-section">
   <h2>Share Your Review</h2>
   <div class="review-form">
@@ -93,6 +97,7 @@
   </div>
 </section>
 
+<!-- Modal -->
 <div class="modal-overlay" id="modalOverlay">
   <div class="modal">
     <h3 id="modalTitle"></h3>

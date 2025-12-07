@@ -1,3 +1,4 @@
+/* Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -40,7 +41,7 @@ nav a:hover { color: #fff; }
 
 /* Hero */
 .hero {
-  padding: 3rem 1rem;
+  padding: 3rem 1rem 2rem;
 }
 
 .hero h2 {
@@ -48,36 +49,56 @@ nav a:hover { color: #fff; }
   margin-bottom: 0.5rem;
 }
 
-/* Grid */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+/* Section Titles */
+.section-title {
+  text-align: left;
+  padding: 1rem 2rem 0.5rem;
+}
+
+.section-title h3 {
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+/* Carousel */
+.carousel {
+  display: flex;
+  overflow-x: auto;
   gap: 1rem;
-  padding: 2rem;
-  max-width: 1000px;
-  margin: auto;
+  padding: 1rem 2rem;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel::-webkit-scrollbar {
+  height: 6px;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
 }
 
 .card {
+  flex: 0 0 auto;
+  width: 220px;
   background: rgba(255,255,255,0.05);
   border-radius: 10px;
   overflow: hidden;
+  scroll-snap-align: start;
   transition: transform 0.3s;
 }
 
 .card:hover { transform: translateY(-5px); }
 
-.card img { width: 100%; display: block; }
-
-.card h3 {
-  color: #fff;
-  margin: 0.5rem 0;
+.card img {
+  width: 100%;
+  display: block;
 }
 
 .card p {
-  color: #9ca3af;
+  padding: 0.7rem;
+  color: #cbd5e1;
   font-size: 0.9rem;
-  padding: 0 1rem 1rem;
 }
 
 /* Footer */
@@ -86,7 +107,5 @@ footer {
   font-size: 0.85rem;
   color: #9ca3af;
   border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 2rem;
 }
-
-
-
