@@ -1,82 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Watchlist</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Watchlist – Entry 5</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <!-- Header -->
+
+  <!-- HEADER -->
   <header>
-    <div class="logo">
-      <img src="https://cdn-icons-png.flaticon.com/512/5977/5977580.png" alt="logo">
-      <h1>The Watchlist</h1>
-    </div>
+    <h1>The Watchlist</h1>
     <nav>
-      <a href="#reviews">Reviews</a>
-      <a href="#community">Community</a>
-      <a href="#contact">Contact</a>
+      <a href="#">Home</a>
+      <a href="#">Menu</a>
+      <a href="#">Trending</a>
+      <a href="#">Coming Soon</a>
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
+  <!-- INTRO SECTION -->
+  <section class="intro">
     <h2>Discover. Review. Connect.</h2>
     <p>Welcome to The Watchlist — your space to explore films, share reviews, and connect with fellow critics.</p>
-    <a href="#community" class="cta">Join the Conversation</a>
   </section>
 
-  <!-- Featured Reviews -->
-  <section id="reviews" class="featured">
-    <h2>Trending Reviews</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="https://i.ibb.co/qm5d8Xk/movie1.jpg" alt="Dune">
-        <div class="info">
-          <h3>Dune: Part Two</h3>
-          <p>A visually stunning and emotionally rich sci-fi experience.</p>
-        </div>
-      </div>
+  <!-- CAROUSELS -->
+  <section class="carousel-section">
+    <h3>Trending Now</h3>
+    <div class="carousel">
+      <div class="item">Neon Skies ★★★★☆</div>
+      <div class="item">Lunar Echoes ★★★☆☆</div>
+      <div class="item">Riverfall ★★★★★</div>
+      <div class="item">Glass Kingdom ★★★★☆</div>
+      <div class="item">Dune Whispers ★★★★☆</div>
+    </div>
 
-      <div class="card">
-        <img src="https://i.ibb.co/R4XmhN6/movie2.jpg" alt="Barbie">
-        <div class="info">
-          <h3>Barbie</h3>
-          <p>Smart, stylish, and empowering — a pop-cultural statement.</p>
-        </div>
-      </div>
+    <h3>Editor’s Choice</h3>
+    <div class="carousel">
+      <div class="item">Silent Pulse ★★★★★</div>
+      <div class="item">Velvet Storm ★★★★☆</div>
+      <div class="item">Crimson Alley ★★★★☆</div>
+      <div class="item">Winter Bloom ★★★★★</div>
+      <div class="item">Shadow Script ★★★★☆</div>
+    </div>
 
-      <div class="card">
-        <img src="https://i.ibb.co/pX1yZyr/movie3.jpg" alt="Oppenheimer">
-        <div class="info">
-          <h3>Oppenheimer</h3>
-          <p>Christopher Nolan’s gripping exploration of genius and guilt.</p>
-        </div>
-      </div>
+    <h3>Coming Soon</h3>
+    <div class="carousel">
+      <div class="item">Horizon Line ★★★★☆</div>
+      <div class="item">The Silver Gate ★★★☆☆</div>
+      <div class="item">Eternal North ★★★★★</div>
+      <div class="item">Midnight Rain ★★★★☆</div>
+      <div class="item">Solar Tide ★★★★☆</div>
     </div>
   </section>
 
-  <!-- Community -->
-  <section id="community" class="community">
-    <h2>Reviewer Portal</h2>
-    <p>Share your thoughts, engage with others, and grow as a critic.</p>
+  <!-- REVIEW PORTAL -->
+  <section class="review-portal">
 
-    <form class="comment-form">
-      <input type="text" placeholder="Your Name" required />
-      <textarea placeholder="Write your review..." required></textarea>
-      <button type="submit">Submit Review</button>
-    </form>
+    <h3>Review Portal</h3>
 
-    <div class="sample-comments">
-      <p>💬 “Loved Dune’s cinematography!” — Alex</p>
-      <p>💬 “Barbie is a masterpiece of self-expression.” — Priya</p>
+    <div class="review-box">
+      <label>Movie Title</label>
+      <input id="movieTitle" type="text" placeholder="Enter movie name">
+
+      <label>Your Rating</label>
+      <div class="stars">★★★★★</div>
+
+      <label>Your Review</label>
+      <textarea id="reviewText" placeholder="Write your review here..."></textarea>
+
+      <button onclick="submitReview()">Submit Review</button>
     </div>
+
+    <h3 class="recent-title">Recent Reviews</h3>
+
+    <div id="recentReviews" class="recent-reviews">
+      <div class="review-item">Eclipse City — “A visually stunning thriller.” ★★★★☆</div>
+      <div class="review-item">Paper Skies — “Emotionally rich, beautifully written.” ★★★★★</div>
+    </div>
+
   </section>
 
-  <!-- Footer -->
-  <footer id="contact">
-    <p>© 2025 The Watchlist — Where Reviewers Connect 🎥</p>
-  </footer>
+  <!-- FOOTER -->
+  <footer>2025 · The Watchlist</footer>
+
+
+<script>
+function submitReview() {
+  const title = document.getElementById("movieTitle").value.trim();
+  const text = document.getElementById("reviewText").value.trim();
+
+  if (!title || !text) {
+    alert("Please enter both movie title and review.");
+    return;
+  }
+
+  const newReview = document.createElement("div");
+  newReview.classList.add("review-item");
+  newReview.innerText = `${title} — “${text}” ★★★★☆`;
+
+  document.getElementById("recentReviews").prepend(newReview);
+
+  document.getElementById("movieTitle").value = "";
+  document.getElementById("reviewText").value = "";
+}
+</script>
+
 </body>
 </html>
