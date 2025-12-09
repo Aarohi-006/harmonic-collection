@@ -1,87 +1,93 @@
-/* Global */
+/* Global Styles */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
-    background: #000;
-    color: #fff;
+    background-color: #000;
+    color: #ffcc00;
 }
 
 /* Header */
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 20px 40px;
+    padding: 20px 0;
     border-bottom: 1px solid #222;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 700;
-    color: #fff;
 }
 
-.nav a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: #fff;
+/* Welcome Section */
+.welcome {
+    text-align: center;
+    margin: 30px 20px;
+}
+
+.welcome h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
     font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.nav a:hover {
-    opacity: 0.7;
-}
-
-/* Section */
+/* Section Titles */
 .section-title {
     text-align: center;
     margin-top: 40px;
-    margin-bottom: 10px;
-    font-size: 28px;
+    margin-bottom: 20px;
+    font-size: 26px;
     font-weight: 600;
 }
 
 /* Carousel */
 .carousel-container {
-    display: flex;
-    justify-content: center;
+    overflow-x: auto;
     padding: 20px 0;
+    scroll-behavior: smooth;
 }
 
 .carousel {
     display: flex;
-    gap: 25px;
-    flex-wrap: wrap; /* wraps to new line if screen is small */
+    gap: 20px;
+    min-width: max-content;
 }
 
 .item {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    background: rgba(255,255,255,0.05);
-    padding: 20px;
-    border-radius: 8px;
-    min-width: 180px;
-}
-
-/* Movie Title */
-.movie-title {
-    text-align: center;
-    font-size: 18px;
+    min-width: 200px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    cursor: pointer;
     font-weight: 600;
-    margin-bottom: 10px;
-}
-
-/* IMDb Rating */
-.rating {
+    font-size: 18px;
     text-align: center;
-    font-size: 14px;
-    color: #fbbf24; /* golden stars */
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.stars {
-    margin-left: 5px;
+.item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(255, 204, 0, 0.3);
+}
+
+/* Scrollbar Styling */
+.carousel-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+    background-color: #ffcc00;
+    border-radius: 4px;
 }
 
 /* Footer */
@@ -91,5 +97,4 @@ body {
     margin-top: 40px;
     border-top: 1px solid #222;
     font-size: 14px;
-    color: #fff;
 }

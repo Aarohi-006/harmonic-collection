@@ -21,15 +21,10 @@ body {
 }
 
 .icon {
-  font-size: 80px; /* bigger icons */
+  font-size: 80px;
   cursor: pointer;
   animation: float 3s infinite ease-in-out;
   transition: transform 0.2s;
-}
-
-.icon p {
-  font-size: 16px;
-  margin-top: 10px;
 }
 
 .icon:hover {
