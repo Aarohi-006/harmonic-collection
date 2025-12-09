@@ -11,32 +11,30 @@
 
 <canvas id="dots-background"></canvas>
 
-<!-- Top Logo -->
-<div class="top-logo">
-  <img src="logo.png" alt="The Watchlist Logo" />
-  <h1>The Watchlist</h1>
-</div>
-
-<!-- Header with Nav -->
+<!-- Header -->
 <header>
-  <div class="logo">
-    <img src="logo.png" alt="The Watchlist Logo" />
-    <h1>The Watchlist</h1>
-  </div>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Genres</a>
-    <a href="#">Reviews</a>
-    <div class="language-dropdown">
-      Language
-      <div class="language-menu">
-        <div data-lang="en">English</div>
-        <div data-lang="es">Spanish</div>
-        <div data-lang="fr">French</div>
-      </div>
+  <h1 class="site-title">The Watchlist</h1>
+  <div class="language-dropdown">
+    Language
+    <div class="language-menu">
+      <div data-lang="en">English</div>
+      <div data-lang="es">Spanish</div>
+      <div data-lang="fr">French</div>
     </div>
-  </nav>
+  </div>
 </header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h2>Your Ultimate Film & Series Companion</h2>
+  <p>Discover, track, and review your favorite titles — all in one place.</p>
+  <button class="cta">Explore Now</button>
+</section>
+
+<!-- Search Bar -->
+<div class="search-bar">
+  <input type="text" id="searchInput" placeholder="Search movies or series..." />
+</div>
 
 <!-- Filters -->
 <div class="filters">
@@ -47,7 +45,7 @@
   <button data-genre="sci-fi">Sci-Fi</button>
 </div>
 
-<!-- Trending Carousel -->
+<!-- Carousels (Trending, Editor's Picks, Coming Soon, Top Choices) -->
 <section class="carousel-section">
   <h2>Trending Now</h2>
   <div class="carousel" data-carousel="trending">
@@ -57,7 +55,6 @@
   </div>
 </section>
 
-<!-- Editor's Picks -->
 <section class="carousel-section">
   <h2>Editor's Picks</h2>
   <div class="carousel" data-carousel="editors">
@@ -67,13 +64,21 @@
   </div>
 </section>
 
-<!-- Coming Soon -->
 <section class="carousel-section">
   <h2>Coming Soon</h2>
   <div class="carousel" data-carousel="comingsoon">
     <div class="carousel-cell" data-genre="action" data-title="Deadpool & Wolverine" data-year="2025" data-rating="—" data-desc="Marvel’s chaotic duo returns in an explosive multiverse adventure." data-trailer="https://www.youtube.com/embed/73_1biulkYk">Deadpool & Wolverine</div>
     <div class="carousel-cell" data-genre="sci-fi" data-title="Tron: Ares" data-year="2025" data-rating="—" data-desc="A new chapter in the Tron universe exploring digital-human boundaries." data-trailer="https://www.youtube.com/embed/OeVapCrI1pY">Tron: Ares</div>
     <div class="carousel-cell" data-genre="drama" data-title="The Last Horizon" data-year="2025" data-rating="—" data-desc="A gripping survival drama set on a distant icy world." data-trailer="https://www.youtube.com/embed/DP-V-T9hbHQ">The Last Horizon</div>
+  </div>
+</section>
+
+<section class="carousel-section">
+  <h2>Top Choices</h2>
+  <div class="carousel" data-carousel="topchoices">
+    <div class="carousel-cell" data-genre="drama" data-title="Casablanca" data-year="1942" data-rating="8.5" data-desc="Classic romance in wartime." data-trailer="https://www.youtube.com/embed/BkL9l7qovsE">Casablanca</div>
+    <div class="carousel-cell" data-genre="action" data-title="Die Hard" data-year="1988" data-rating="8.2" data-desc="Action-packed Christmas thriller." data-trailer="https://www.youtube.com/embed/2TQ-pOvI6Xo">Die Hard</div>
+    <div class="carousel-cell" data-genre="drama" data-title="The Godfather" data-year="1972" data-rating="9.2" data-desc="Mafia family epic." data-trailer="https://www.youtube.com/embed/sY1S34973zA">The Godfather</div>
   </div>
 </section>
 

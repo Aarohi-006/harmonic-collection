@@ -1,233 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Watchlist</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Bebas+Neue&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Watchlist</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Bebas+Neue&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 </head>
 <body>
 
-  <!-- === Top Logo === -->
-  <div class="top-logo">
+<!-- Top Logo -->
+<div class="top-logo">
+  <img src="logo.png" alt="The Watchlist Logo">
+</div>
+
+<!-- Header -->
+<header>
+  <div class="logo">
     <img src="logo.png" alt="The Watchlist Logo">
+    <h1>The Watchlist</h1>
   </div>
-
-  <!-- === Header === -->
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="The Watchlist Logo">
-      <h1>The Watchlist</h1>
-    </div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Genres</a>
-      <a href="#">Reviews</a>
-      <div class="language-dropdown" id="languageDropdown">
-        Language
-        <div class="language-menu">
-          <div data-lang="en">English</div>
-          <div data-lang="es">Spanish</div>
-          <div data-lang="fr">French</div>
-        </div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Genres</a>
+    <a href="#">Reviews</a>
+    <div class="language-dropdown" id="languageDropdown">
+      Language
+      <div class="language-menu">
+        <div data-lang="en">English</div>
+        <div data-lang="es">Spanish</div>
+        <div data-lang="fr">French</div>
       </div>
-    </nav>
-  </header>
-
-  <!-- === Hero Section === -->
-  <section class="hero">
-    <h2>Your Ultimate Film & Series Companion</h2>
-    <p>Discover, track, and review your favorite titles — all in one place.</p>
-    <button class="cta">Explore Now</button>
-  </section>
-
-  <!-- === Carousel Section: Trending === -->
-  <section class="carousel-section">
-    <h2>Trending Now</h2>
-    <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 2500 }'>
-      <div class="carousel-cell" data-title="Everything Everywhere All at Once" data-year="2022" data-rating="8.0" data-desc="A mind-bending adventure that explores multiple realities.">Everything Everywhere All at Once</div>
-      <div class="carousel-cell" data-title="Top Gun: Maverick" data-year="2022" data-rating="8.5" data-desc="The iconic fighter pilot story returns with stunning action.">Top Gun: Maverick</div>
-      <div class="carousel-cell" data-title="Avatar: The Way of Water" data-year="2022" data-rating="7.8" data-desc="Return to Pandora in this visually breathtaking sequel.">Avatar: The Way of Water</div>
-      <div class="carousel-cell" data-title="The Batman" data-year="2022" data-rating="7.9" data-desc="A dark, detective-driven take on the Caped Crusader.">The Batman</div>
-      <div class="carousel-cell" data-title="Black Panther: Wakanda Forever" data-year="2022" data-rating="7.3" data-desc="The legacy of Wakanda continues after T’Challa.">Black Panther: Wakanda Forever</div>
     </div>
-  </section>
+  </nav>
+</header>
 
-  <!-- === Carousel Section: Coming Soon === -->
-  <section class="carousel-section">
-    <h2>Coming Soon</h2>
-    <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 3000 }'>
-      <div class="carousel-cell" data-title="Dune: Part Two" data-year="2025" data-rating="N/A" data-desc="The epic sci-fi saga continues on Arrakis.">Dune: Part Two</div>
-      <div class="carousel-cell" data-title="Indiana Jones and the Dial of Destiny" data-year="2023" data-rating="N/A" data-desc="Indy returns on another thrilling archaeological adventure.">Indiana Jones and the Dial of Destiny</div>
-      <div class="carousel-cell" data-title="Guardians of the Galaxy Vol. 3" data-year="2023" data-rating="N/A" data-desc="Our favorite intergalactic misfits are back for more fun.">Guardians of the Galaxy Vol. 3</div>
-      <div class="carousel-cell" data-title="The Marvels" data-year="2023" data-rating="N/A" data-desc="Superheroes unite in this exciting Marvel sequel.">The Marvels</div>
-      <div class="carousel-cell" data-title="Killers of the Flower Moon" data-year="2023" data-rating="N/A" data-desc="A dark historical thriller from Martin Scorsese.">Killers of the Flower Moon</div>
-    </div>
-  </section>
+<!-- Hero Section -->
+<section class="hero">
+  <h2>Your Ultimate Film & Series Companion</h2>
+  <p>Discover, track, and review your favorite titles — all in one place.</p>
+  <button class="cta">Explore Now</button>
+</section>
 
-  <!-- === Carousel Section: Editor's Picks === -->
-  <section class="carousel-section">
-    <h2>Editor's Picks</h2>
-    <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 2800 }'>
-      <div class="carousel-cell" data-title="Parasite" data-year="2019" data-rating="8.6" data-desc="A darkly comedic thriller exploring class divides.">Parasite</div>
-      <div class="carousel-cell" data-title="Joker" data-year="2019" data-rating="8.5" data-desc="A gritty origin story of the infamous villain.">Joker</div>
-      <div class="carousel-cell" data-title="The Grand Budapest Hotel" data-year="2014" data-rating="8.1" data-desc="A whimsical tale set in a luxurious European hotel.">The Grand Budapest Hotel</div>
-      <div class="carousel-cell" data-title="La La Land" data-year="2016" data-rating="8.0" data-desc="A romantic musical about love and ambition in LA.">La La Land</div>
-      <div class="carousel-cell" data-title="Mad Max: Fury Road" data-year="2015" data-rating="8.1" data-desc="A high-octane post-apocalyptic action adventure.">Mad Max: Fury Road</div>
-    </div>
-  </section>
-
-  <!-- === Carousel Section: Popular Interests === -->
-  <section class="carousel-section">
-    <h2>Popular Interests</h2>
-    <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 2500 }'>
-      <div class="carousel-cell">Action</div>
-      <div class="carousel-cell">Comedy</div>
-      <div class="carousel-cell">Drama</div>
-      <div class="carousel-cell">Horror</div>
-      <div class="carousel-cell">Romance</div>
-      <div class="carousel-cell">Sci-Fi</div>
-      <div class="carousel-cell">Documentary</div>
-    </div>
-  </section>
-
-  <!-- === Review Section === -->
-  <section class="review-section">
-    <h2>Share Your Review</h2>
-    <div class="review-form">
-      <textarea id="reviewInput" placeholder="Write your review here..."></textarea>
-      <div class="star-rating" id="starRating">
-        <span data-star="1">★</span>
-        <span data-star="2">★</span>
-        <span data-star="3">★</span>
-        <span data-star="4">★</span>
-        <span data-star="5">★</span>
-      </div>
-      <button id="submitReview" class="cta">Submit</button>
-    </div>
-
-    <div class="reviews-list">
-      <h3>What others are saying:</h3>
-      <ul id="reviewList"></ul>
-    </div>
-  </section>
-
-  <!-- === Footer === -->
-  <footer>
-    <p>© 2025 The Watchlist. All rights reserved.</p>
-  </footer>
-
-  <!-- === Modal === -->
-  <div class="modal-overlay" id="modalOverlay">
-    <div class="modal">
-      <h3 id="modalTitle"></h3>
-      <p id="modalYear"></p>
-      <p id="modalRating"></p>
-      <p id="modalDesc"></p>
-      <button class="close-modal" id="closeModal">Close</button>
-    </div>
+<!-- Search & Genre Filters -->
+<section class="search-filter">
+  <input type="text" id="searchInput" placeholder="Search movies or series...">
+  <div id="genreButtons" class="genre-buttons">
+    <button data-genre="All" class="active">All</button>
+    <button data-genre="Action">Action</button>
+    <button data-genre="Comedy">Comedy</button>
+    <button data-genre="Drama">Drama</button>
+    <button data-genre="Horror">Horror</button>
+    <button data-genre="Romance">Romance</button>
+    <button data-genre="Sci-Fi">Sci-Fi</button>
+    <button data-genre="Documentary">Documentary</button>
   </div>
+</section>
 
-  <!-- === JavaScript === -->
-  <script>
-    // Review System
-    const reviewInput = document.getElementById('reviewInput');
-    const submitBtn = document.getElementById('submitReview');
-    const reviewList = document.getElementById('reviewList');
-    let selectedStars = 0;
+<!-- Carousels -->
+<section class="carousel-section">
+  <h2>Trending Now</h2>
+  <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 2500 }'>
+    <div class="carousel-cell" data-genre="Action" data-title="Everything Everywhere All at Once" data-year="2022" data-rating="8.0" data-desc="A mind-bending adventure that explores multiple realities.">Everything Everywhere All at Once</div>
+    <div class="carousel-cell" data-genre="Action" data-title="Top Gun: Maverick" data-year="2022" data-rating="8.5" data-desc="The iconic fighter pilot story returns with stunning action.">Top Gun: Maverick</div>
+    <div class="carousel-cell" data-genre="Sci-Fi" data-title="Avatar: The Way of Water" data-year="2022" data-rating="7.8" data-desc="Return to Pandora in this visually breathtaking sequel.">Avatar: The Way of Water</div>
+  </div>
+</section>
 
-    const stars = document.querySelectorAll('#starRating span');
-    stars.forEach(star => {
-      star.addEventListener('mouseover', () => {
-        stars.forEach(s => s.classList.remove('active'));
-        for (let i = 0; i < star.dataset.star; i++) stars[i].classList.add('active');
-      });
-      star.addEventListener('click', () => {
-        selectedStars = star.dataset.star;
-      });
-    });
+<section class="carousel-section">
+  <h2>Coming Soon</h2>
+  <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 3000 }'>
+    <div class="carousel-cell" data-genre="Sci-Fi" data-title="Dune: Part Two" data-year="2025" data-rating="N/A" data-desc="The epic sci-fi saga continues on Arrakis.">Dune: Part Two</div>
+    <div class="carousel-cell" data-genre="Action" data-title="Indiana Jones and the Dial of Destiny" data-year="2023" data-rating="N/A" data-desc="Indy returns on another thrilling adventure.">Indiana Jones and the Dial of Destiny</div>
+  </div>
+</section>
 
-    submitBtn.addEventListener('click', () => {
-      const text = reviewInput.value.trim();
-      if (text === '') {
-        alert('Please write something before submitting!');
-        return;
-      }
-      const li = document.createElement('li');
-      li.innerHTML = `
-        <p>${text}</p>
-        <div>Rating: ${selectedStars} ★</div>
-        <div class="reaction-buttons">
-          <button class="like-btn">👍</button>
-          <button class="dislike-btn">👎</button>
-        </div>
-      `;
-      const likeBtn = li.querySelector('.like-btn');
-      const dislikeBtn = li.querySelector('.dislike-btn');
+<section class="carousel-section">
+  <h2>Editor's Picks</h2>
+  <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 2800 }'>
+    <div class="carousel-cell" data-genre="Drama" data-title="Parasite" data-year="2019" data-rating="8.6" data-desc="A darkly comedic thriller exploring class divides.">Parasite</div>
+    <div class="carousel-cell" data-genre="Drama" data-title="Joker" data-year="2019" data-rating="8.5" data-desc="A gritty origin story of the infamous villain.">Joker</div>
+  </div>
+</section>
 
-      likeBtn.addEventListener('click', () => {
-        likeBtn.classList.toggle('active');
-        dislikeBtn.classList.remove('active');
-      });
-      dislikeBtn.addEventListener('click', () => {
-        dislikeBtn.classList.toggle('active');
-        likeBtn.classList.remove('active');
-      });
+<!-- Review Section -->
+<section class="review-section">
+  <h2>Share Your Review</h2>
+  <div class="review-form">
+    <textarea id="reviewInput" placeholder="Write your review here..."></textarea>
+    <div class="star-rating" id="starRating">
+      <span data-star="1">★</span>
+      <span data-star="2">★</span>
+      <span data-star="3">★</span>
+      <span data-star="4">★</span>
+      <span data-star="5">★</span>
+    </div>
+    <button id="submitReview" class="cta">Submit</button>
+  </div>
+  <div class="reviews-list">
+    <h3>What others are saying:</h3>
+    <ul id="reviewList"></ul>
+  </div>
+</section>
 
-      reviewList.appendChild(li);
-      reviewInput.value = '';
-      stars.forEach(s => s.classList.remove('active'));
-      selectedStars = 0;
-    });
+<!-- Footer -->
+<footer>
+  <p>© 2025 The Watchlist. All rights reserved.</p>
+</footer>
 
-    const observer = new MutationObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.addedNodes.length > 0) {
-          entry.addedNodes[0].style.opacity = 0;
-          setTimeout(() => entry.addedNodes[0].style.transition = 'opacity 0.5s', 0);
-          setTimeout(() => entry.addedNodes[0].style.opacity = 1, 50);
-        }
-      });
-    });
-    observer.observe(reviewList, { childList: true });
+<!-- Modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <h3 id="modalTitle"></h3>
+    <p id="modalYear"></p>
+    <p id="modalRating"></p>
+    <p id="modalDesc"></p>
+    <button class="close-modal" id="closeModal">Close</button>
+  </div>
+</div>
 
-    // Language Dropdown
-    const langDropdown = document.getElementById('languageDropdown');
-    langDropdown.addEventListener('click', () => {
-      langDropdown.classList.toggle('active');
-    });
-
-    // Modal
-    const modalOverlay = document.getElementById('modalOverlay');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalYear = document.getElementById('modalYear');
-    const modalRating = document.getElementById('modalRating');
-    const modalDesc = document.getElementById('modalDesc');
-    const closeModal = document.getElementById('closeModal');
-    const carouselCells = document.querySelectorAll('.carousel-cell');
-
-    carouselCells.forEach(cell => {
-      cell.addEventListener('click', () => {
-        if(cell.dataset.title){ // only movies have data
-          modalTitle.textContent = cell.dataset.title;
-          modalYear.textContent = "Year: " + cell.dataset.year;
-          modalRating.textContent = "Rating: " + cell.dataset.rating;
-          modalDesc.textContent = cell.dataset.desc;
-          modalOverlay.style.display = 'flex';
-        }
-      });
-    });
-
-    closeModal.addEventListener('click', () => {
-      modalOverlay.style.display = 'none';
-    });
-    modalOverlay.addEventListener('click', (e) => {
-      if(e.target === modalOverlay) modalOverlay.style.display = 'none';
-    });
-  </script>
-
+<script src="script.js"></script>
 </body>
 </html>

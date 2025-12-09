@@ -4,135 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coming Soon</title>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #ffcc00, #ff8800, #000000);
-      background-size: 200% 200%;
-      animation: gradientMove 10s ease infinite;
-      text-align: center;
-      color: black;
-    }
-
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    header {
-      padding: 20px;
-    }
-
-    header h1 {
-      margin-bottom: 10px;
-      font-size: 36px;
-      font-weight: bold;
-      color: black;
-    }
-
-    nav a {
-      text-decoration: none;
-      margin: 0 12px;
-      font-weight: bold;
-      color: black;
-      font-size: 16px;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    main {
-      margin-top: 40px;
-    }
-
-    h2 {
-      font-size: 30px;
-      color: black;
-    }
-
-    .carousel {
-      margin: 25px auto;
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-
-    .carousel-item {
-      width: 150px;
-      text-align: center;
-      background: rgba(255, 255, 255, 0.6);
-      padding: 10px;
-      border-radius: 10px;
-      color: black;
-      font-weight: bold;
-    }
-
-    .carousel-item img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 6px;
-    }
-
-    footer {
-      margin-top: 40px;
-      padding: 15px;
-      color: black;
-      font-weight: bold;
-    }
-  </style>
 </head>
+<body style="margin:0; font-family: Arial, sans-serif; text-align:center;
+             background:#0d0d0d; color:#fff; height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:flex-start;">
 
-<body>
+  <!-- Header -->
+  <header style="background:#111; width:100%; padding:15px 0; position:sticky; top:0; display:flex; justify-content:center; align-items:center; gap:50px;">
+    <h1 style="color:#ffcc00; margin:0.2em 0;">My Watchlist</h1>
+    <nav>
+      <a href="index.html" style="margin:0 10px; color:#ffcc00; text-decoration:none;">Home</a>
+      <a href="movies.html" style="margin:0 10px; color:#ffcc00; text-decoration:none;">Movies</a>
+      <a href="series.html" style="margin:0 10px; color:#ffcc00; text-decoration:none;">Series</a>
+      <a href="comingsoon.html" style="margin:0 10px; color:#ffcc00; text-decoration:none;">Coming Soon</a>
+      <a href="toprated.html" style="margin:0 10px; color:#ffcc00; text-decoration:none;">Top Rated</a>
+    </nav>
+  </header>
 
-<header>
-  <h1>My Watchlist</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="menu.html">Menu</a>
-    <a href="comingsoon.html">Coming Soon</a>
-    <a href="series.html">Series</a>
-    <a href="toprated.html">Top Rated</a>
-    <a href="genres.html">Genres</a>
-    <a href="review.html">Reviews</a>
-    <a href="language.html">Language</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+  <!-- Hero Section -->
+  <section style="margin:40px 0;">
+    <h2 style="color:#ffcc00;">Coming Soon</h2>
+    <p style="max-width:600px; margin:auto; color:#ccc;">Check out the upcoming movies you don't want to miss!</p>
+  </section>
 
-<main>
-  <section class="carousel-section">
-    <h2>Coming Soon</h2>
-
-    <div class="carousel">
-      <div class="carousel-item">
-        <img src="images/poster1.jpg" alt="Film 1">
-        <p>Film 1</p>
+  <!-- Carousel Section -->
+  <section>
+    <div style="display:flex; overflow-x:auto; gap:15px; padding:10px; justify-content:center;">
+      <div style="flex:0 0 auto; width:200px; background:#1a1a1a; border-radius:10px; padding:10px;">
+        <img src="images/guardians_vol3.jpg" alt="Guardians of the Galaxy Vol. 3" style="width:100%; border-radius:8px; margin-bottom:5px;">
+        <p style="color:#ffcc00;">Guardians of the Galaxy Vol. 3</p>
       </div>
-
-      <div class="carousel-item">
-        <img src="images/poster2.jpg" alt="Film 2">
-        <p>Film 2</p>
+      <div style="flex:0 0 auto; width:200px; background:#1a1a1a; border-radius:10px; padding:10px;">
+        <img src="images/the_flash.jpg" alt="The Flash" style="width:100%; border-radius:8px; margin-bottom:5px;">
+        <p style="color:#ffcc00;">The Flash</p>
       </div>
-
-      <div class="carousel-item">
-        <img src="images/poster3.jpg" alt="Film 3">
-        <p>Film 3</p>
+      <div style="flex:0 0 auto; width:200px; background:#1a1a1a; border-radius:10px; padding:10px;">
+        <img src="images/mission_impossible7.jpg" alt="Mission: Impossible – Dead Reckoning" style="width:100%; border-radius:8px; margin-bottom:5px;">
+        <p style="color:#ffcc00;">Mission: Impossible – Dead Reckoning</p>
+      </div>
+      <div style="flex:0 0 auto; width:200px; background:#1a1a1a; border-radius:10px; padding:10px;">
+        <img src="images/fantastic_beasts3.jpg" alt="Fantastic Beasts 3" style="width:100%; border-radius:8px; margin-bottom:5px;">
+        <p style="color:#ffcc00;">Fantastic Beasts 3</p>
+      </div>
+      <div style="flex:0 0 auto; width:200px; background:#1a1a1a; border-radius:10px; padding:10px;">
+        <img src="images/killers_of_the_flowers.jpg" alt="Killers of the Flower Moon" style="width:100%; border-radius:8px; margin-bottom:5px;">
+        <p style="color:#ffcc00;">Killers of the Flower Moon</p>
       </div>
     </div>
-
   </section>
-</main>
 
-<footer>
-  <p>&copy; 2025 My Watchlist. All rights reserved.</p>
-</footer>
+  <!-- Footer -->
+  <footer style="margin-top:40px; padding:15px; width:100%; color:#888;">
+    &copy; 2025 My Watchlist. All rights reserved.
+  </footer>
 
 </body>
 </html>

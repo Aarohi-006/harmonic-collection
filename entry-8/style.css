@@ -1,8 +1,9 @@
+/* === General Styles === */
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
   background: #0d0d0d;
-  color: #f5f5f5;
+  color: #ffcc00;
   overflow-x: hidden;
 }
 
@@ -16,92 +17,80 @@ body {
 .logo img {
   max-width: 150px;
   height: auto;
-  background-color: transparent;
   filter: brightness(0) invert(1);
-  display: inline-block;
 }
 
 /* === Header === */
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 1.2rem 2rem;
+  gap: 4rem;
+  padding: 1rem 2rem;
   background: #111;
   border-bottom: 1px solid #333;
-  position: relative;
+  flex-wrap: wrap;
 }
 
-.logo {
+header .logo {
   display: flex;
   align-items: center;
   gap: 0.6rem;
 }
 
-.logo h1 {
+header .logo h1 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.8rem;
-  letter-spacing: 1px;
+  font-size: 2rem;
 }
 
-nav a {
-  color: #f5f5f5;
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+header nav a {
+  color: #ffcc00;
   text-decoration: none;
-  margin-left: 1.5rem;
   font-weight: 500;
 }
 
-nav a:hover {
-  color: #ffcc00;
+header nav a:hover {
+  color: #fff;
 }
 
 /* === Language Dropdown === */
 .language-dropdown {
   position: relative;
-  display: inline-block;
-  margin-left: 1.5rem;
-  font-weight: 500;
   cursor: pointer;
-  color: #f5f5f5;
 }
 
 .language-dropdown.active .language-menu {
   display: flex;
 }
 
-.language-dropdown:hover {
-  color: #ffcc00;
-}
-
 .language-menu {
   position: absolute;
   top: 25px;
   left: 0;
-  background: #1c1c1c;
+  background: #1a1a1a;
   border: 1px solid #333;
   border-radius: 8px;
   width: 120px;
   display: none;
   flex-direction: column;
-  overflow: hidden;
-  animation: dropdownFade 0.3s ease;
   z-index: 20;
 }
 
 .language-menu div {
   padding: 10px;
   cursor: pointer;
-  color: #f5f5f5;
+  color: #ffcc00;
 }
 
 .language-menu div:hover {
   background: #333;
-  color: #ffcc00;
-}
-
-@keyframes dropdownFade {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
+  color: #fff;
 }
 
 /* === Hero Section === */
@@ -138,6 +127,46 @@ nav a:hover {
   background: #fff;
 }
 
+/* === Search & Genre Filters === */
+.search-filter {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+#searchInput {
+  padding: 0.8rem 1rem;
+  width: 60%;
+  max-width: 500px;
+  border-radius: 25px;
+  border: 1px solid #333;
+  margin-bottom: 1rem;
+  background: #1a1a1a;
+  color: #ffcc00;
+}
+
+.genre-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.genre-buttons button {
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  border: 1px solid #ffcc00;
+  background: transparent;
+  color: #ffcc00;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.genre-buttons button.active,
+.genre-buttons button:hover {
+  background: #ffcc00;
+  color: #000;
+}
+
 /* === Carousel Section === */
 .carousel-section {
   margin: 3rem auto;
@@ -150,13 +179,11 @@ nav a:hover {
   font-size: 2rem;
   margin-bottom: 1.2rem;
   text-align: center;
-  color: #ffcc00;
-  letter-spacing: 1px;
 }
 
 .carousel-cell {
-  width: 200px;
-  height: 120px;
+  width: 250px;
+  height: 150px;
   margin-right: 15px;
   border-radius: 12px;
   overflow: hidden;
@@ -174,23 +201,10 @@ nav a:hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
-.carousel-cell::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 12px;
-  box-shadow: 0 0 0 rgba(255, 204, 0, 0);
-  transition: box-shadow 0.3s ease;
-}
-
 .carousel-cell:hover {
-  transform: scale(1.08);
+  transform: scale(1.1);
   background: #262626;
   box-shadow: 0 4px 20px rgba(255, 204, 0, 0.3);
-}
-
-.carousel-cell:hover::before {
-  box-shadow: 0 0 15px rgba(255, 204, 0, 0.6);
 }
 
 /* === Review Section === */
@@ -199,13 +213,6 @@ nav a:hover {
   padding: 3rem 2rem;
   border-top: 1px solid #333;
   text-align: center;
-}
-
-.review-section h2 {
-  font-family: 'Bebas Neue', sans-serif;
-  color: #ffcc00;
-  font-size: 2rem;
-  margin-bottom: 1rem;
 }
 
 .review-form {
@@ -222,13 +229,13 @@ nav a:hover {
   height: 100px;
   background: #0d0d0d;
   border: 1px solid #333;
-  color: #f5f5f5;
+  color: #ffcc00;
   padding: 1rem;
   border-radius: 10px;
   resize: none;
 }
 
-/* === Star Rating === */
+/* Star Rating */
 .star-rating span {
   font-size: 1.5rem;
   color: #444;
@@ -240,16 +247,11 @@ nav a:hover {
   color: #ffcc00;
 }
 
-/* === Reviews List === */
+/* Reviews List */
 .reviews-list {
   text-align: left;
   max-width: 700px;
   margin: 0 auto;
-}
-
-.reviews-list ul {
-  list-style: none;
-  padding: 0;
 }
 
 .reviews-list li {
@@ -257,7 +259,6 @@ nav a:hover {
   margin-bottom: 1rem;
   padding: 1rem;
   border-radius: 10px;
-  color: #f5f5f5;
   transition: transform 0.3s ease;
 }
 
@@ -286,17 +287,7 @@ nav a:hover {
   border-radius: 12px;
   max-width: 400px;
   text-align: center;
-  color: #f5f5f5;
-}
-
-.modal h3 {
-  font-family: 'Bebas Neue', sans-serif;
   color: #ffcc00;
-  margin-bottom: 0.5rem;
-}
-
-.modal p {
-  margin: 0.5rem 0;
 }
 
 .close-modal {
@@ -311,6 +302,7 @@ nav a:hover {
 
 .close-modal:hover {
   background: #fff;
+  color: #000;
 }
 
 /* === Footer === */
