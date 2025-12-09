@@ -3,11 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Watchlist – Entry 5</title>
-
-  <!-- FLICKITY CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-
+  <title>The Watchlist</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -16,19 +12,20 @@
   <!-- HEADER -->
   <header>
     <h1>The Watchlist</h1>
-
-    <select class="language-select">
-      <option>EN</option>
-      <option>ES</option>
-      <option>FR</option>
-    </select>
-
     <nav>
       <a href="#">Home</a>
       <a href="#">Menu</a>
       <a href="#">Trending</a>
       <a href="#">Coming Soon</a>
     </nav>
+    <div class="language-select">
+      <select>
+        <option value="en">English</option>
+        <option value="es">Spanish</option>
+        <option value="fr">French</option>
+        <option value="de">German</option>
+      </select>
+    </div>
   </header>
 
   <!-- INTRO SECTION -->
@@ -37,45 +34,67 @@
     <p>Welcome to The Watchlist — your space to explore films, share reviews, and connect with fellow critics.</p>
   </section>
 
-  <!-- GENRE FILTER BAR -->
-  <div class="genre-filters">
-    <button>All</button>
-    <button>Action</button>
-    <button>Drama</button>
-    <button>Comedy</button>
-    <button>Thriller</button>
-    <button>Romance</button>
-    <button>Horror</button>
-  </div>
+  <!-- GENRE FILTERS -->
+  <section class="genre-section">
+    <h3>Filter by Genre</h3>
+    <div class="genre-filters">
+      <input type="radio" name="genre" id="all" checked>
+      <label for="all">All</label>
+
+      <input type="radio" name="genre" id="action">
+      <label for="action">Action</label>
+
+      <input type="radio" name="genre" id="drama">
+      <label for="drama">Drama</label>
+
+      <input type="radio" name="genre" id="comedy">
+      <label for="comedy">Comedy</label>
+
+      <input type="radio" name="genre" id="thriller">
+      <label for="thriller">Thriller</label>
+    </div>
+  </section>
 
   <!-- CAROUSELS -->
   <section class="carousel-section">
 
-    <h3>Trending Now</h3>
-    <div class="carousel flickity-enabled" data-flickity='{"wrapAround": true, "pageDots": false}'>
-      <div class="item">Neon Skies ★★★★☆</div>
-      <div class="item">Lunar Echoes ★★★☆☆</div>
-      <div class="item">Riverfall ★★★★★</div>
-      <div class="item">Glass Kingdom ★★★★☆</div>
-      <div class="item">Dune Whispers ★★★★☆</div>
+    <h3 class="carousel-title">Trending Now</h3>
+    <div class="carousel-wrapper">
+      <button class="scroll-btn prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
+      <div class="carousel trending">
+        <div class="item" data-genre="action">Neon Skies ★★★★☆</div>
+        <div class="item" data-genre="drama">Lunar Echoes ★★★☆☆</div>
+        <div class="item" data-genre="comedy">Riverfall ★★★★★</div>
+        <div class="item" data-genre="thriller">Glass Kingdom ★★★★☆</div>
+        <div class="item" data-genre="action">Dune Whispers ★★★★☆</div>
+      </div>
+      <button class="scroll-btn next" onclick="scrollCarousel(this, 1)">&#10095;</button>
     </div>
 
-    <h3>Editor’s Choice</h3>
-    <div class="carousel flickity-enabled" data-flickity='{"wrapAround": true, "pageDots": false}'>
-      <div class="item">Silent Pulse ★★★★★</div>
-      <div class="item">Velvet Storm ★★★★☆</div>
-      <div class="item">Crimson Alley ★★★★☆</div>
-      <div class="item">Winter Bloom ★★★★★</div>
-      <div class="item">Shadow Script ★★★★☆</div>
+    <h3 class="carousel-title">Editor’s Choice</h3>
+    <div class="carousel-wrapper">
+      <button class="scroll-btn prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
+      <div class="carousel editors">
+        <div class="item" data-genre="drama">Silent Pulse ★★★★★</div>
+        <div class="item" data-genre="comedy">Velvet Storm ★★★★☆</div>
+        <div class="item" data-genre="thriller">Crimson Alley ★★★★☆</div>
+        <div class="item" data-genre="drama">Winter Bloom ★★★★★</div>
+        <div class="item" data-genre="action">Shadow Script ★★★★☆</div>
+      </div>
+      <button class="scroll-btn next" onclick="scrollCarousel(this, 1)">&#10095;</button>
     </div>
 
-    <h3>Coming Soon</h3>
-    <div class="carousel flickity-enabled" data-flickity='{"wrapAround": true, "pageDots": false}'>
-      <div class="item">Horizon Line ★★★★☆</div>
-      <div class="item">The Silver Gate ★★★☆☆</div>
-      <div class="item">Eternal North ★★★★★</div>
-      <div class="item">Midnight Rain ★★★★☆</div>
-      <div class="item">Solar Tide ★★★★☆</div>
+    <h3 class="carousel-title">Coming Soon</h3>
+    <div class="carousel-wrapper">
+      <button class="scroll-btn prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
+      <div class="carousel coming-soon">
+        <div class="item" data-genre="action">Horizon Line ★★★★☆</div>
+        <div class="item" data-genre="drama">The Silver Gate ★★★☆☆</div>
+        <div class="item" data-genre="comedy">Eternal North ★★★★★</div>
+        <div class="item" data-genre="thriller">Midnight Rain ★★★★☆</div>
+        <div class="item" data-genre="action">Solar Tide ★★★★☆</div>
+      </div>
+      <button class="scroll-btn next" onclick="scrollCarousel(this, 1)">&#10095;</button>
     </div>
 
   </section>
@@ -87,20 +106,20 @@
 
     <div class="review-box">
       <label>Movie Title</label>
-      <input type="text" placeholder="Enter movie name">
+      <input id="movieTitle" type="text" placeholder="Enter movie name">
 
       <label>Your Rating</label>
       <div class="stars">★★★★★</div>
 
       <label>Your Review</label>
-      <textarea placeholder="Write your review here..."></textarea>
+      <textarea id="reviewText" placeholder="Write your review here..."></textarea>
 
-      <button>Submit Review</button>
+      <button onclick="submitReview()">Submit Review</button>
     </div>
 
     <h3 class="recent-title">Recent Reviews</h3>
 
-    <div class="recent-reviews">
+    <div id="recentReviews" class="recent-reviews">
       <div class="review-item">Eclipse City — “A visually stunning thriller.” ★★★★☆</div>
       <div class="review-item">Paper Skies — “Emotionally rich, beautifully written.” ★★★★★</div>
     </div>
@@ -110,8 +129,28 @@
   <!-- FOOTER -->
   <footer>2025 · The Watchlist</footer>
 
-  <!-- FLICKITY JS -->
-  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script>
+    function submitReview() {
+      const title = document.getElementById("movieTitle").value.trim();
+      const text = document.getElementById("reviewText").value.trim();
+      if (!title || !text) {
+        alert("Please enter both movie title and review.");
+        return;
+      }
+      const newReview = document.createElement("div");
+      newReview.classList.add("review-item", "new");
+      newReview.innerText = `${title} — “${text}” ★★★★☆`;
+      document.getElementById("recentReviews").prepend(newReview);
+      document.getElementById("movieTitle").value = "";
+      document.getElementById("reviewText").value = "";
+    }
+
+    function scrollCarousel(btn, direction) {
+      const carousel = btn.parentElement.querySelector('.carousel');
+      const scrollAmount = carousel.offsetWidth * 0.7;
+      carousel.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+    }
+  </script>
 
 </body>
 </html>
