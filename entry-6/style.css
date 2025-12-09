@@ -9,42 +9,42 @@ body {
 
 /* HEADER */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.8rem 1.5rem 0.5rem;
+  text-align: center;
+  padding: 2rem 1rem;
+  position: relative;
 }
 
 header h1 {
-  flex: 1;
-  text-align: center;
-  font-size: 2.4rem;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
-.language-dropdown {
-  background: #111;
-  color: #fff;
-  border: 1px solid #333;
-  padding: 0.4rem 0.6rem;
-  border-radius: 6px;
-}
-
-/* NAV */
-.main-nav {
+nav {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin: 1rem 0 2rem;
 }
 
-.main-nav a {
-  color: #fff;
+nav a {
   text-decoration: none;
+  color: #fff;
   opacity: 0.8;
 }
 
-.main-nav a:hover {
+nav a:hover {
   opacity: 1;
+}
+
+/* LANGUAGE DROPDOWN */
+.language-select {
+  position: absolute;
+  top: 2rem;
+  right: 1.5rem;
+  background: #111;
+  color: #fff;
+  border: 1px solid #333;
+  padding: 0.5rem;
+  border-radius: 6px;
 }
 
 /* INTRO */
@@ -61,7 +61,31 @@ header h1 {
 }
 
 .intro p {
+  font-size: 1rem;
   opacity: 0.8;
+}
+
+/* GENRE FILTERS */
+.genre-filters {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.genre-filters button {
+  background: #111;
+  color: #fff;
+  border: 1px solid #222;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.genre-filters button:hover {
+  background: #222;
 }
 
 /* CAROUSELS */
@@ -72,34 +96,22 @@ header h1 {
 }
 
 .carousel-section h3 {
-  margin: 1.4rem 0 0.8rem;
-  font-size: 1.3rem;
+  margin: 1.5rem 0 0.7rem;
 }
 
-/* Flickity overrides */
-.flickity-carousel {
-  background: transparent;
-}
-
-.flickity-prev-next-button {
-  background: #111 !important;
-  border-radius: 50%;
-}
-
-.flickity-prev-next-button:hover {
-  background: #222 !important;
+.carousel {
+  background: transparent !important;
 }
 
 .item {
-  width: 180px;
+  width: 160px;
   background: #111;
   padding: 1rem;
   border-radius: 10px;
   border: 1px solid #222;
   text-align: center;
+  font-size: 0.95rem;
   margin-right: 10px;
-  color: #fff;
-  font-size: 1rem;
 }
 
 /* REVIEW PORTAL */
@@ -122,32 +134,47 @@ header h1 {
   width: 100%;
   background: #1a1a1a;
   border: none;
-  color: #fff;
-  padding: .7rem;
   border-radius: 8px;
+  padding: 0.7rem;
+  color: #fff;
+}
+
+.review-box textarea {
+  height: 120px;
+}
+
+.stars {
+  color: gold;
+  font-size: 1.5rem;
 }
 
 .review-box button {
-  width: 100%;
-  padding: .8rem;
   margin-top: 1.5rem;
-  background: #a64dff;
+  width: 100%;
   border: none;
+  padding: 0.8rem;
+  background: #a64dff;
   color: #fff;
   border-radius: 8px;
 }
 
-.review-item {
+.review-box button:hover {
+  background: #c07aff;
+}
+
+/* RECENT REVIEWS */
+.recent-reviews .review-item {
   background: #111;
+  border: 1px solid #222;
   padding: 1rem;
   border-radius: 10px;
-  border: 1px solid #222;
+  margin-bottom: 1rem;
 }
 
 /* FOOTER */
 footer {
   text-align: center;
   padding: 2rem;
-  opacity: .7;
+  opacity: 0.7;
   margin-top: 3rem;
 }

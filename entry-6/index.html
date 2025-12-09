@@ -15,67 +15,69 @@
 
   <!-- HEADER -->
   <header>
-    <div class="left"></div>
     <h1>The Watchlist</h1>
 
-    <!-- LANGUAGE DROPDOWN -->
-    <select class="language-dropdown">
+    <select class="language-select">
       <option>EN</option>
       <option>ES</option>
       <option>FR</option>
-      <option>HI</option>
-      <option>KR</option>
     </select>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Menu</a>
+      <a href="#">Trending</a>
+      <a href="#">Coming Soon</a>
+    </nav>
   </header>
 
-  <!-- NAV -->
-  <nav class="main-nav">
-    <a href="#">Home</a>
-    <a href="#">Menu</a>
-    <a href="#">Trending</a>
-    <a href="#">Coming Soon</a>
-  </nav>
-
-  <!-- INTRO -->
+  <!-- INTRO SECTION -->
   <section class="intro">
     <h2>Discover. Review. Connect.</h2>
     <p>Welcome to The Watchlist — your space to explore films, share reviews, and connect with fellow critics.</p>
   </section>
 
+  <!-- GENRE FILTER BAR -->
+  <div class="genre-filters">
+    <button>All</button>
+    <button>Action</button>
+    <button>Drama</button>
+    <button>Comedy</button>
+    <button>Thriller</button>
+    <button>Romance</button>
+    <button>Horror</button>
+  </div>
+
   <!-- CAROUSELS -->
   <section class="carousel-section">
+
     <h3>Trending Now</h3>
-    <div class="carousel flickity-carousel"
-      data-flickity='{ "wrapAround": true, "prevNextButtons": true, "pageDots": false }'>
-      
-      <div class="item">FlickCity ★★★★★</div>
+    <div class="carousel flickity-enabled" data-flickity='{"wrapAround": true, "pageDots": false}'>
       <div class="item">Neon Skies ★★★★☆</div>
       <div class="item">Lunar Echoes ★★★☆☆</div>
       <div class="item">Riverfall ★★★★★</div>
       <div class="item">Glass Kingdom ★★★★☆</div>
+      <div class="item">Dune Whispers ★★★★☆</div>
     </div>
 
     <h3>Editor’s Choice</h3>
-    <div class="carousel flickity-carousel"
-      data-flickity='{ "wrapAround": true, "prevNextButtons": true, "pageDots": false }'>
-      
-      <div class="item">FlickCity: Origins ★★★★★</div>
+    <div class="carousel flickity-enabled" data-flickity='{"wrapAround": true, "pageDots": false}'>
       <div class="item">Silent Pulse ★★★★★</div>
       <div class="item">Velvet Storm ★★★★☆</div>
       <div class="item">Crimson Alley ★★★★☆</div>
       <div class="item">Winter Bloom ★★★★★</div>
+      <div class="item">Shadow Script ★★★★☆</div>
     </div>
 
     <h3>Coming Soon</h3>
-    <div class="carousel flickity-carousel"
-      data-flickity='{ "wrapAround": true, "prevNextButtons": true, "pageDots": false }'>
-      
-      <div class="item">FlickCity: Revolution ★★★★☆</div>
+    <div class="carousel flickity-enabled" data-flickity='{"wrapAround": true, "pageDots": false}'>
       <div class="item">Horizon Line ★★★★☆</div>
       <div class="item">The Silver Gate ★★★☆☆</div>
       <div class="item">Eternal North ★★★★★</div>
+      <div class="item">Midnight Rain ★★★★☆</div>
       <div class="item">Solar Tide ★★★★☆</div>
     </div>
+
   </section>
 
   <!-- REVIEW PORTAL -->
@@ -85,21 +87,21 @@
 
     <div class="review-box">
       <label>Movie Title</label>
-      <input id="movieTitle" type="text" placeholder="Enter movie name">
+      <input type="text" placeholder="Enter movie name">
 
       <label>Your Rating</label>
       <div class="stars">★★★★★</div>
 
       <label>Your Review</label>
-      <textarea id="reviewText" placeholder="Write your review here..."></textarea>
+      <textarea placeholder="Write your review here..."></textarea>
 
-      <button onclick="submitReview()">Submit Review</button>
+      <button>Submit Review</button>
     </div>
 
     <h3 class="recent-title">Recent Reviews</h3>
 
-    <div id="recentReviews" class="recent-reviews">
-      <div class="review-item">FlickCity — “A fresh and bold cinematic world.” ★★★★★</div>
+    <div class="recent-reviews">
+      <div class="review-item">Eclipse City — “A visually stunning thriller.” ★★★★☆</div>
       <div class="review-item">Paper Skies — “Emotionally rich, beautifully written.” ★★★★★</div>
     </div>
 
@@ -108,29 +110,8 @@
   <!-- FOOTER -->
   <footer>2025 · The Watchlist</footer>
 
-<!-- FLICKITY JS -->
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-
-<script>
-function submitReview() {
-  const title = document.getElementById("movieTitle").value.trim();
-  const text = document.getElementById("reviewText").value.trim();
-
-  if (!title || !text) {
-    alert("Please enter both movie title and review.");
-    return;
-  }
-
-  const newReview = document.createElement("div");
-  newReview.classList.add("review-item");
-  newReview.innerText = `${title} — “${text}” ★★★★☆`;
-
-  document.getElementById("recentReviews").prepend(newReview);
-
-  document.getElementById("movieTitle").value = "";
-  document.getElementById("reviewText").value = "";
-}
-</script>
+  <!-- FLICKITY JS -->
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
 </body>
 </html>
