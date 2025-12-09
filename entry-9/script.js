@@ -1,8 +1,13 @@
 // === Flickity Carousels ===
 const carousels = document.querySelectorAll('.carousel');
-const flktyInstances = [];
 carousels.forEach(carousel => {
-  flktyInstances.push(new Flickity(carousel, { wrapAround: true, autoPlay: 2500 }));
+  new Flickity(carousel, {
+    wrapAround: true,
+    autoPlay: 2500,
+    cellAlign: 'left',
+    contain: true,
+    pageDots: false
+  });
 });
 
 // === Language Dropdown ===
@@ -11,64 +16,60 @@ languageDropdown.addEventListener('click', () => {
   languageDropdown.classList.toggle('active');
 });
 
-// === Floating Dots Background ===
-const dotsContainer = document.getElementById('dots-background');
-const dotsCount = 50;
+// === Golden Floating Dots Background ===
+const canvas = document.getElementById('dots-background');
+const ctx = canvas.getContext('2d');
+let width = canvas.width = window.innerWidth;
+let height = canvas.height = window.innerHeight;
 const dots = [];
-
-for (let i = 0; i < dotsCount; i++) {
-  const dot = document.createElement('div');
-  dot.classList.add('dot');
-  dot.style.left = Math.random() * window.innerWidth + 'px';
-  dot.style.top = Math.random() * window.innerHeight + 'px';
-  dot.style.animationDuration = (3 + Math.random() * 5) + 's';
-  dotsContainer.appendChild(dot);
-  dots.push(dot);
+for(let i=0;i<100;i++){
+  dots.push({x:Math.random()*width,y:Math.random()*height,r:Math.random()*3+1,speedY:Math.random()*1+0.2,speedX:Math.random()*0.5-0.25,alpha:Math.random()*0.5+0.3});
 }
+function animateDots(){
+  ctx.clearRect(0,0,width,height);
+  dots.forEach(dot=>{
+    dot.y-=dot.speedY; dot.x+=dot.speedX;
+    if(dot.y<0) dot.y=height; if(dot.x>width) dot.x=0; if(dot.x<0) dot.x=width;
+    ctx.beginPath(); ctx.arc(dot.x,dot.y,dot.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(255,204,0,${dot.alpha})`; ctx.fill();
+  });
+  requestAnimationFrame(animateDots);
+}
+animateDots();
+window.addEventListener('resize',()=>{width=canvas.width=window.innerWidth;height=canvas.height=window.innerHeight;});
 
 // === Filters ===
 const filterButtons = document.querySelectorAll('.filters button');
-filterButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterButtons.forEach(b => b.classList.remove('active'));
+filterButtons.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    filterButtons.forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
-    const genre = btn.getAttribute('data-genre');
-
-    carousels.forEach(carousel => {
-      const cells = carousel.querySelectorAll('.carousel-cell');
-      cells.forEach(cell => {
-        if (genre === 'all' || cell.getAttribute('data-genre') === genre) {
-          cell.style.display = 'flex';
-        } else {
-          cell.style.display = 'none';
-        }
-      });
-      const flkty = Flickity.data(carousel);
+    const genre=btn.getAttribute('data-genre');
+    carousels.forEach(carousel=>{
+      const flkty=Flickity.data(carousel);
+      const cells=carousel.querySelectorAll('.carousel-cell');
+      cells.forEach(cell=>cell.style.display=(genre==='all'||cell.getAttribute('data-genre')===genre)?'flex':'none');
       flkty.reloadCells();
     });
   });
 });
 
 // === Search Bar ===
-const searchInput = document.querySelector('.search-bar input');
-searchInput.addEventListener('input', () => {
+const searchInput = document.querySelector('#searchInput');
+searchInput.addEventListener('input',()=>{
   const query = searchInput.value.toLowerCase();
-  carousels.forEach(carousel => {
-    const cells = carousel.querySelectorAll('.carousel-cell');
-    cells.forEach(cell => {
-      const title = cell.getAttribute('data-title').toLowerCase();
-      if (title.includes(query)) {
-        cell.style.display = 'flex';
-      } else {
-        cell.style.display = 'none';
-      }
+  carousels.forEach(carousel=>{
+    const flkty=Flickity.data(carousel);
+    const cells=carousel.querySelectorAll('.carousel-cell');
+    cells.forEach(cell=>{
+      const title=cell.getAttribute('data-title').toLowerCase();
+      cell.style.display=title.includes(query)?'flex':'none';
     });
-    const flkty = Flickity.data(carousel);
     flkty.reloadCells();
   });
 });
 
-// === Modal Functionality ===
+// === Modal ===
 const modalOverlay = document.getElementById('modalOverlay');
 const modalTitle = document.getElementById('modalTitle');
 const modalYear = document.getElementById('modalYear');
@@ -77,81 +78,65 @@ const modalDesc = document.getElementById('modalDesc');
 const modalTrailer = document.getElementById('modalTrailer');
 const closeModal = document.getElementById('closeModal');
 
-document.querySelectorAll('.carousel-cell').forEach(cell => {
-  cell.addEventListener('click', () => {
+document.querySelectorAll('.carousel-cell').forEach(cell=>{
+  cell.addEventListener('click',()=>{
     modalTitle.textContent = cell.getAttribute('data-title');
-    modalYear.textContent = 'Year: ' + cell.getAttribute('data-year');
-    modalRating.textContent = 'Rating: ' + cell.getAttribute('data-rating');
-    modalDesc.textContent = cell.getAttribute('data-desc');
-
-    // Embed YouTube trailer using thumbnail
+    modalYear.textContent = 'Year: '+cell.getAttribute('data-year');
+    modalRating.textContent = 'Rating: '+cell.getAttribute('data-rating');
+    modalDesc.textContent = 'Description: '+cell.getAttribute('data-desc');
     const trailerURL = cell.getAttribute('data-trailer');
-    const videoId = trailerURL.split('/embed/')[1];
-    const thumbnailURL = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-
-    modalTrailer.innerHTML = `
-      <a href="${trailerURL}" target="_blank">
-        <img src="${thumbnailURL}" alt="Trailer" style="width:100%;border-radius:10px;" />
-      </a>
-    `;
-    modalOverlay.style.display = 'flex';
+    modalTrailer.innerHTML = `<iframe width="100%" height="200" src="${trailerURL}" frameborder="0" allowfullscreen></iframe>`;
+    modalOverlay.style.display='flex';
   });
 });
+closeModal.addEventListener('click',()=>{modalOverlay.style.display='none'; modalTrailer.innerHTML='';});
+modalOverlay.addEventListener('click',e=>{if(e.target===modalOverlay){modalOverlay.style.display='none'; modalTrailer.innerHTML='';}});
 
-closeModal.addEventListener('click', () => {
-  modalOverlay.style.display = 'none';
-  modalTrailer.innerHTML = '';
-});
-
-modalOverlay.addEventListener('click', e => {
-  if (e.target === modalOverlay) {
-    modalOverlay.style.display = 'none';
-    modalTrailer.innerHTML = '';
-  }
-});
-
-// === Review System ===
-const stars = document.querySelectorAll('#starRating span');
-let selectedStars = 0;
-
-stars.forEach(star => {
-  star.addEventListener('click', () => {
-    selectedStars = star.getAttribute('data-star');
-    stars.forEach(s => s.classList.remove('active'));
-    for (let i = 0; i < selectedStars; i++) stars[i].classList.add('active');
-  });
-});
-
-const submitReview = document.getElementById('submitReview');
-submitReview.addEventListener('click', () => {
+// === Fixed Review System ===
+document.addEventListener('DOMContentLoaded', () => {
+  const stars = document.querySelectorAll('#starRating span');
+  const submitReview = document.getElementById('submitReview');
   const reviewInput = document.getElementById('reviewInput');
   const reviewList = document.getElementById('reviewList');
-  const reviewText = reviewInput.value.trim();
 
-  if (reviewText === '') return alert('Please write a review!');
+  let selectedStars = 0;
 
-  const li = document.createElement('li');
-  li.innerHTML = `
-    <p>${reviewText}</p>
-    <div>Rating: ${selectedStars} ★</div>
-    <div class="reaction-buttons">
-      <button class="like-btn">👍</button>
-      <button class="dislike-btn">👎</button>
-    </div>
-  `;
-  reviewList.appendChild(li);
-  reviewInput.value = '';
-  selectedStars = 0;
-  stars.forEach(s => s.classList.remove('active'));
-
-  const likeBtn = li.querySelector('.like-btn');
-  const dislikeBtn = li.querySelector('.dislike-btn');
-  likeBtn.addEventListener('click', () => {
-    likeBtn.classList.toggle('active');
-    dislikeBtn.classList.remove('active');
+  stars.forEach((star, index) => {
+    star.addEventListener('mouseover', () => {
+      stars.forEach((s, i) => s.classList.toggle('active', i <= index));
+    });
+    star.addEventListener('mouseout', () => {
+      stars.forEach((s, i) => s.classList.toggle('active', i < selectedStars));
+    });
+    star.addEventListener('click', () => {
+      selectedStars = index + 1;
+      stars.forEach((s, i) => s.classList.toggle('active', i < selectedStars));
+    });
   });
-  dislikeBtn.addEventListener('click', () => {
-    dislikeBtn.classList.toggle('active');
-    likeBtn.classList.remove('active');
+
+  submitReview.addEventListener('click', () => {
+    const reviewText = reviewInput.value.trim();
+    if(!reviewText) return alert('Please write a review!');
+    if(selectedStars === 0) return alert('Please select a star rating!');
+
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <p>${reviewText}</p>
+      <div>Rating: ${selectedStars} ★</div>
+      <div class="reaction-buttons">
+        <button class="like-btn">👍</button>
+        <button class="dislike-btn">👎</button>
+      </div>
+    `;
+    reviewList.appendChild(li);
+
+    reviewInput.value='';
+    selectedStars=0;
+    stars.forEach(s=>s.classList.remove('active'));
+
+    const likeBtn = li.querySelector('.like-btn');
+    const dislikeBtn = li.querySelector('.dislike-btn');
+    likeBtn.addEventListener('click',()=>{likeBtn.classList.toggle('active'); dislikeBtn.classList.remove('active');});
+    dislikeBtn.addEventListener('click',()=>{dislikeBtn.classList.toggle('active'); likeBtn.classList.remove('active');});
   });
 });
