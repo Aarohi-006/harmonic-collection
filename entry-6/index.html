@@ -28,7 +28,7 @@
     </div>
   </header>
 
-  <!-- INTRO SECTION -->
+  <!-- INTRO -->
   <section class="intro">
     <h2>Discover. Review. Connect.</h2>
     <p>Welcome to The Watchlist — your space to explore films, share reviews, and connect with fellow critics.</p>
@@ -38,29 +38,19 @@
   <section class="genre-section">
     <h3>Filter by Genre</h3>
     <div class="genre-filters">
-      <input type="radio" name="genre" id="all" checked>
-      <label for="all">All</label>
-
-      <input type="radio" name="genre" id="action">
-      <label for="action">Action</label>
-
-      <input type="radio" name="genre" id="drama">
-      <label for="drama">Drama</label>
-
-      <input type="radio" name="genre" id="comedy">
-      <label for="comedy">Comedy</label>
-
-      <input type="radio" name="genre" id="thriller">
-      <label for="thriller">Thriller</label>
+      <button data-genre="all" class="genre-btn active">All</button>
+      <button data-genre="action" class="genre-btn">Action</button>
+      <button data-genre="drama" class="genre-btn">Drama</button>
+      <button data-genre="comedy" class="genre-btn">Comedy</button>
+      <button data-genre="thriller" class="genre-btn">Thriller</button>
     </div>
   </section>
 
   <!-- CAROUSELS -->
   <section class="carousel-section">
-
     <h3 class="carousel-title">Trending Now</h3>
     <div class="carousel-wrapper">
-      <button class="scroll-btn prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
+      <button class="scroll-btn prev">&#10094;</button>
       <div class="carousel trending">
         <div class="item" data-genre="action">Neon Skies ★★★★☆</div>
         <div class="item" data-genre="drama">Lunar Echoes ★★★☆☆</div>
@@ -68,12 +58,12 @@
         <div class="item" data-genre="thriller">Glass Kingdom ★★★★☆</div>
         <div class="item" data-genre="action">Dune Whispers ★★★★☆</div>
       </div>
-      <button class="scroll-btn next" onclick="scrollCarousel(this, 1)">&#10095;</button>
+      <button class="scroll-btn next">&#10095;</button>
     </div>
 
     <h3 class="carousel-title">Editor’s Choice</h3>
     <div class="carousel-wrapper">
-      <button class="scroll-btn prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
+      <button class="scroll-btn prev">&#10094;</button>
       <div class="carousel editors">
         <div class="item" data-genre="drama">Silent Pulse ★★★★★</div>
         <div class="item" data-genre="comedy">Velvet Storm ★★★★☆</div>
@@ -81,12 +71,12 @@
         <div class="item" data-genre="drama">Winter Bloom ★★★★★</div>
         <div class="item" data-genre="action">Shadow Script ★★★★☆</div>
       </div>
-      <button class="scroll-btn next" onclick="scrollCarousel(this, 1)">&#10095;</button>
+      <button class="scroll-btn next">&#10095;</button>
     </div>
 
     <h3 class="carousel-title">Coming Soon</h3>
     <div class="carousel-wrapper">
-      <button class="scroll-btn prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
+      <button class="scroll-btn prev">&#10094;</button>
       <div class="carousel coming-soon">
         <div class="item" data-genre="action">Horizon Line ★★★★☆</div>
         <div class="item" data-genre="drama">The Silver Gate ★★★☆☆</div>
@@ -94,16 +84,13 @@
         <div class="item" data-genre="thriller">Midnight Rain ★★★★☆</div>
         <div class="item" data-genre="action">Solar Tide ★★★★☆</div>
       </div>
-      <button class="scroll-btn next" onclick="scrollCarousel(this, 1)">&#10095;</button>
+      <button class="scroll-btn next">&#10095;</button>
     </div>
-
   </section>
 
   <!-- REVIEW PORTAL -->
   <section class="review-portal">
-
     <h3>Review Portal</h3>
-
     <div class="review-box">
       <label>Movie Title</label>
       <input id="movieTitle" type="text" placeholder="Enter movie name">
@@ -118,38 +105,63 @@
     </div>
 
     <h3 class="recent-title">Recent Reviews</h3>
-
     <div id="recentReviews" class="recent-reviews">
       <div class="review-item">Eclipse City — “A visually stunning thriller.” ★★★★☆</div>
       <div class="review-item">Paper Skies — “Emotionally rich, beautifully written.” ★★★★★</div>
     </div>
-
   </section>
 
   <!-- FOOTER -->
   <footer>2025 · The Watchlist</footer>
 
+  <!-- JS -->
   <script>
+    // Review submission
     function submitReview() {
       const title = document.getElementById("movieTitle").value.trim();
       const text = document.getElementById("reviewText").value.trim();
-      if (!title || !text) {
-        alert("Please enter both movie title and review.");
-        return;
-      }
+      if (!title || !text) { alert("Please enter both movie title and review."); return; }
       const newReview = document.createElement("div");
-      newReview.classList.add("review-item", "new");
+      newReview.classList.add("review-item");
       newReview.innerText = `${title} — “${text}” ★★★★☆`;
       document.getElementById("recentReviews").prepend(newReview);
       document.getElementById("movieTitle").value = "";
       document.getElementById("reviewText").value = "";
     }
 
-    function scrollCarousel(btn, direction) {
-      const carousel = btn.parentElement.querySelector('.carousel');
-      const scrollAmount = carousel.offsetWidth * 0.7;
-      carousel.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
-    }
+    // Scroll buttons
+    document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+      const carousel = wrapper.querySelector('.carousel');
+      const prevBtn = wrapper.querySelector('.scroll-btn.prev');
+      const nextBtn = wrapper.querySelector('.scroll-btn.next');
+      const itemWidth = carousel.querySelector('.item').offsetWidth + parseInt(getComputedStyle(carousel).gap);
+
+      prevBtn.addEventListener('click', () => {
+        carousel.scrollBy({ left: -itemWidth * 2, behavior: 'smooth' });
+      });
+
+      nextBtn.addEventListener('click', () => {
+        carousel.scrollBy({ left: itemWidth * 2, behavior: 'smooth' });
+      });
+    });
+
+    // Genre filtering
+    const genreButtons = document.querySelectorAll('.genre-btn');
+    genreButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        genreButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const genre = btn.dataset.genre;
+
+        document.querySelectorAll('.carousel .item').forEach(item => {
+          if (genre === 'all' || item.dataset.genre === genre) {
+            item.style.display = 'flex';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
   </script>
 
 </body>
