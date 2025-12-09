@@ -1,100 +1,95 @@
-/* Global Styles */
+/* === Base Styles === */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', sans-serif;
-    background-color: #000;
-    color: #ffcc00;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
 }
 
-/* Header */
-.header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
-    border-bottom: 1px solid #222;
+/* === Header === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #111;
+  border-bottom: 1px solid #333;
 }
 
-.logo {
-    font-size: 32px;
-    font-weight: 700;
+.site-title {
+  font-size: 2rem;
+  color: #ffcc00;
 }
 
-/* Welcome Section */
-.welcome {
-    text-align: center;
-    margin: 30px 20px;
+.main-nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #f5f5f5;
+  font-weight: 500;
 }
 
-.welcome h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
+.main-nav a:hover {
+  color: #ffcc00;
 }
 
-.welcome p {
-    font-size: 16px;
-    max-width: 600px;
-    margin: 0 auto;
+/* === Carousel Section === */
+.carousel-section {
+  margin: 3rem auto;
+  max-width: 1200px;
+  padding: 0 1rem;
 }
 
-/* Section Titles */
-.section-title {
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    font-size: 26px;
-    font-weight: 600;
+.carousel-section h2 {
+  font-size: 2rem;
+  color: #ffcc00;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
-/* Carousel */
-.carousel-container {
-    overflow-x: auto;
-    padding: 20px 0;
-    scroll-behavior: smooth;
-}
-
+/* === Horizontal Carousel (CSS only) === */
 .carousel {
-    display: flex;
-    gap: 20px;
-    min-width: max-content;
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
 }
 
-.item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 200px;
-    height: 120px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 18px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+.carousel::-webkit-scrollbar {
+  height: 8px;
 }
 
-.item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 25px rgba(255, 204, 0, 0.3);
+.carousel::-webkit-scrollbar-thumb {
+  background: #ffcc00;
+  border-radius: 4px;
 }
 
-/* Scrollbar Styling */
-.carousel-container::-webkit-scrollbar {
-    height: 8px;
+/* === Carousel Cells === */
+.carousel-cell {
+  flex: 0 0 auto;
+  width: 220px;
+  height: 140px;
+  background: #1a1a1a;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.carousel-container::-webkit-scrollbar-thumb {
-    background-color: #ffcc00;
-    border-radius: 4px;
+.carousel-cell:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(255, 204, 0, 0.3);
 }
 
-/* Footer */
-.footer {
-    text-align: center;
-    padding: 15px;
-    margin-top: 40px;
-    border-top: 1px solid #222;
-    font-size: 14px;
+.carousel-cell h3 {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.carousel-cell p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #ccc;
 }
