@@ -1,148 +1,153 @@
+/* BASIC PAGE */
 body {
-  font-family: 'Inter', sans-serif;
   margin: 0;
-  background: #0d0d0d;
-  color: #f5f5f5;
-  overflow-x: hidden;
+  padding: 0;
+  background-color: #000;
+  font-family: 'Inter', sans-serif;
+  color: #fff;
 }
 
-/* === Header === */
+/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 2rem;
+  padding: 1.8rem 1.5rem 0.5rem;
+}
+
+header h1 {
+  flex: 1;
+  text-align: center;
+  font-size: 2.4rem;
+}
+
+.language-dropdown {
   background: #111;
-  border-bottom: 1px solid #333;
+  color: #fff;
+  border: 1px solid #333;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
 }
 
-.logo {
+/* NAV */
+.main-nav {
   display: flex;
-  align-items: center;
-  gap: 0.6rem;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1rem 0 2rem;
 }
 
-.logo img {
-  width: 40px;
-  height: 40px;
-}
-
-.logo h1 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.8rem;
-  letter-spacing: 1px;
-}
-
-nav a {
-  color: #f5f5f5;
+.main-nav a {
+  color: #fff;
   text-decoration: none;
-  margin-left: 1.5rem;
-  font-weight: 500;
+  opacity: 0.8;
 }
 
-nav a:hover {
-  color: #ffcc00;
+.main-nav a:hover {
+  opacity: 1;
 }
 
-/* === Hero Section === */
-.hero {
+/* INTRO */
+.intro {
   text-align: center;
-  padding: 4rem 1rem;
-  background: linear-gradient(to bottom right, #1a1a1a, #262626);
+  padding: 2rem 1.5rem;
+  max-width: 700px;
+  margin: auto;
 }
 
-.hero h2 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.hero p {
-  font-size: 1.1rem;
-  color: #ccc;
-}
-
-.cta {
-  background: #ffcc00;
-  border: none;
-  color: #000;
-  padding: 0.8rem 1.5rem;
-  margin-top: 1rem;
-  border-radius: 30px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.cta:hover {
-  background: #fff;
-}
-
-/* === Carousel Section === */
-.carousel-section {
-  margin: 3rem auto;
-  padding: 1rem 2rem;
-  max-width: 1200px;
-}
-
-.carousel-section h2 {
-  font-family: 'Bebas Neue', sans-serif;
+.intro h2 {
   font-size: 2rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.7rem;
+}
+
+.intro p {
+  opacity: 0.8;
+}
+
+/* CAROUSELS */
+.carousel-section {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.carousel-section h3 {
+  margin: 1.4rem 0 0.8rem;
+  font-size: 1.3rem;
+}
+
+/* Flickity overrides */
+.flickity-carousel {
+  background: transparent;
+}
+
+.flickity-prev-next-button {
+  background: #111 !important;
+  border-radius: 50%;
+}
+
+.flickity-prev-next-button:hover {
+  background: #222 !important;
+}
+
+.item {
+  width: 180px;
+  background: #111;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #222;
   text-align: center;
-  color: #ffcc00;
-  letter-spacing: 1px;
+  margin-right: 10px;
+  color: #fff;
+  font-size: 1rem;
 }
 
-.carousel {
+/* REVIEW PORTAL */
+.review-portal {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem 1.5rem;
+}
+
+.review-box {
+  background: #111;
+  border: 1px solid #222;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.review-box input,
+.review-box textarea {
   width: 100%;
-}
-
-.carousel-cell {
-  width: 200px;
-  height: 300px;
-  margin-right: 15px;
-  border-radius: 12px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: #1a1a1a;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  color: #fff;
+  padding: .7rem;
+  border-radius: 8px;
 }
 
-.carousel-cell img {
+.review-box button {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  padding: .8rem;
+  margin-top: 1.5rem;
+  background: #a64dff;
+  border: none;
+  color: #fff;
+  border-radius: 8px;
 }
 
-.carousel-cell:hover {
-  transform: scale(1.07);
-  box-shadow: 0 4px 20px rgba(255, 204, 0, 0.3);
+.review-item {
+  background: #111;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #222;
 }
 
-/* === Genre Cards === */
-.genre-card {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.5rem;
-  color: #000;
-  background: linear-gradient(135deg, #ffcc00, #ffe680);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.genre-card:hover {
-  background: linear-gradient(135deg, #fff176, #ffcc00);
-  transform: scale(1.07);
-  box-shadow: 0 4px 20px rgba(255, 204, 0, 0.3);
-}
-
-.flickity-page-dots {
-  bottom: -25px;
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 2rem;
+  opacity: .7;
+  margin-top: 3rem;
 }

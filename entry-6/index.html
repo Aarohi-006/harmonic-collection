@@ -1,82 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Watchlist</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Watchlist – Entry 5</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-
-  <!-- Flickity CSS -->
+  <!-- FLICKITY CSS -->
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- === Header === -->
+  <!-- HEADER -->
   <header>
-    <div class="logo">
-      <img src="https://cdn-icons-png.flaticon.com/512/3917/3917132.png" alt="logo">
-      <h1>The Watchlist</h1>
-    </div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Reviews</a>
-      <a href="#">Community</a>
-      <a href="#">Contact</a>
-    </nav>
+    <div class="left"></div>
+    <h1>The Watchlist</h1>
+
+    <!-- LANGUAGE DROPDOWN -->
+    <select class="language-dropdown">
+      <option>EN</option>
+      <option>ES</option>
+      <option>FR</option>
+      <option>HI</option>
+      <option>KR</option>
+    </select>
   </header>
 
-  <!-- === Hero Section === -->
-  <section class="hero">
-    <h2>Your Daily Dose of Movies & Magic</h2>
-    <p>Explore reviews, rate films, and connect with cinephiles from around the world.</p>
-    <button class="cta">Join the Community</button>
+  <!-- NAV -->
+  <nav class="main-nav">
+    <a href="#">Home</a>
+    <a href="#">Menu</a>
+    <a href="#">Trending</a>
+    <a href="#">Coming Soon</a>
+  </nav>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <h2>Discover. Review. Connect.</h2>
+    <p>Welcome to The Watchlist — your space to explore films, share reviews, and connect with fellow critics.</p>
   </section>
 
-  <!-- === Carousel: Coming Soon === -->
+  <!-- CAROUSELS -->
   <section class="carousel-section">
-    <h2>Coming Soon</h2>
-    <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 3000 }'>
-      <div class="carousel-cell"><img src="https://image.tmdb.org/t/p/w500/f2Pv2dfiA5wF7xvMlEwkWzS2T3Z.jpg" alt="Deadpool & Wolverine"></div>
-      <div class="carousel-cell"><img src="https://image.tmdb.org/t/p/w500/8QVDXDiOGHRcAD4oM6MXjE0osSj.jpg" alt="Inside Out 2"></div>
-      <div class="carousel-cell"><img src="https://image.tmdb.org/t/p/w500/pWsD91G2R1Da3AKM3ymr3UoIfRb.jpg" alt="Gladiator II"></div>
-      <div class="carousel-cell"><img src="https://image.tmdb.org/t/p/w500/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg" alt="Joker: Folie à Deux"></div>
+    <h3>Trending Now</h3>
+    <div class="carousel flickity-carousel"
+      data-flickity='{ "wrapAround": true, "prevNextButtons": true, "pageDots": false }'>
+      
+      <div class="item">FlickCity ★★★★★</div>
+      <div class="item">Neon Skies ★★★★☆</div>
+      <div class="item">Lunar Echoes ★★★☆☆</div>
+      <div class="item">Riverfall ★★★★★</div>
+      <div class="item">Glass Kingdom ★★★★☆</div>
+    </div>
+
+    <h3>Editor’s Choice</h3>
+    <div class="carousel flickity-carousel"
+      data-flickity='{ "wrapAround": true, "prevNextButtons": true, "pageDots": false }'>
+      
+      <div class="item">FlickCity: Origins ★★★★★</div>
+      <div class="item">Silent Pulse ★★★★★</div>
+      <div class="item">Velvet Storm ★★★★☆</div>
+      <div class="item">Crimson Alley ★★★★☆</div>
+      <div class="item">Winter Bloom ★★★★★</div>
+    </div>
+
+    <h3>Coming Soon</h3>
+    <div class="carousel flickity-carousel"
+      data-flickity='{ "wrapAround": true, "prevNextButtons": true, "pageDots": false }'>
+      
+      <div class="item">FlickCity: Revolution ★★★★☆</div>
+      <div class="item">Horizon Line ★★★★☆</div>
+      <div class="item">The Silver Gate ★★★☆☆</div>
+      <div class="item">Eternal North ★★★★★</div>
+      <div class="item">Solar Tide ★★★★☆</div>
     </div>
   </section>
 
-  <!-- === Carousel: Fan Favorites === -->
-  <section class="carousel-section">
-    <h2>Fan Favorites</h2>
-    <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 3200 }'>
-      <div class="carousel-cell"><img src="https://image.tmdb.org/t/p/w500/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg" alt="Barbie"></div>
-      <div class="carousel-cell"><img src="https://image.tmdb.org/t/p/w500/pphQXv2uQ8Y6HuFJX8mJcDc2yS7.jpg" alt="Oppenheimer"></div>
-      <div class="carousel-cell"><img src="https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg" alt="Avengers: Infinity War"></div>
-      <div class="carousel-cell"><img src="https://image.tmdb.org/t/p/w500/xqR4ABkFTFYe8NDJi3knwWX7zfn.jpg" alt="The Shawshank Redemption"></div>
-      <div class="carousel-cell"><img src="https://image.tmdb.org/t/p/w500/kdPMUMJzyYAc4roD52qavX0nLIC.jpg" alt="La La Land"></div>
+  <!-- REVIEW PORTAL -->
+  <section class="review-portal">
+
+    <h3>Review Portal</h3>
+
+    <div class="review-box">
+      <label>Movie Title</label>
+      <input id="movieTitle" type="text" placeholder="Enter movie name">
+
+      <label>Your Rating</label>
+      <div class="stars">★★★★★</div>
+
+      <label>Your Review</label>
+      <textarea id="reviewText" placeholder="Write your review here..."></textarea>
+
+      <button onclick="submitReview()">Submit Review</button>
     </div>
+
+    <h3 class="recent-title">Recent Reviews</h3>
+
+    <div id="recentReviews" class="recent-reviews">
+      <div class="review-item">FlickCity — “A fresh and bold cinematic world.” ★★★★★</div>
+      <div class="review-item">Paper Skies — “Emotionally rich, beautifully written.” ★★★★★</div>
+    </div>
+
   </section>
 
-  <!-- === Carousel: Popular Interests (Genres Only) === -->
-  <section class="carousel-section">
-    <h2>Popular Interests</h2>
-    <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 2500 }'>
-      <div class="carousel-cell genre-card">Romance</div>
-      <div class="carousel-cell genre-card">Comedy</div>
-      <div class="carousel-cell genre-card">Thriller</div>
-      <div class="carousel-cell genre-card">Action</div>
-      <div class="carousel-cell genre-card">Horror</div>
-      <div class="carousel-cell genre-card">Sci-Fi</div>
-      <div class="carousel-cell genre-card">Animation</div>
-      <div class="carousel-cell genre-card">Drama</div>
-      <div class="carousel-cell genre-card">Fantasy</div>
-    </div>
-  </section>
+  <!-- FOOTER -->
+  <footer>2025 · The Watchlist</footer>
 
-  <!-- Flickity JS -->
-  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<!-- FLICKITY JS -->
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+<script>
+function submitReview() {
+  const title = document.getElementById("movieTitle").value.trim();
+  const text = document.getElementById("reviewText").value.trim();
+
+  if (!title || !text) {
+    alert("Please enter both movie title and review.");
+    return;
+  }
+
+  const newReview = document.createElement("div");
+  newReview.classList.add("review-item");
+  newReview.innerText = `${title} — “${text}” ★★★★☆`;
+
+  document.getElementById("recentReviews").prepend(newReview);
+
+  document.getElementById("movieTitle").value = "";
+  document.getElementById("reviewText").value = "";
+}
+</script>
+
 </body>
 </html>
