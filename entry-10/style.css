@@ -12,12 +12,19 @@ body {
   letter-spacing: 4px;
 }
 
+.subtitle {
+  margin-top: 10px;
+  font-size: 18px;
+  opacity: 0.8;
+}
+
 .icon-container {
   margin-top: 70px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
+  padding-bottom: 40px;
 }
 
 .icon {
@@ -35,4 +42,10 @@ body {
   0% { transform: translateY(0); }
   50% { transform: translateY(-12px); }
   100% { transform: translateY(0); }
+}
+
+footer {
+  margin-top: 60px;
+  font-size: 14px;
+  opacity: 0.6;
 }
